@@ -1,58 +1,21 @@
-<!--登录网页制作-->
+<!DOCTYPE html>
 <html>
 <head>
-    <!--这是一段由ALTaleX编写的注释！-->
     <title>用户登录</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-        }
-        .login-container {
-            width: 300px;
-            padding: 20px;
-            border: 1px solid #ddd;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        }
-        .form-group {
-            margin-bottom: 15px;
-        }
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-        }
-        .form-group input {
-            width: 100%;
-            padding: 10px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
-        .login-button {
-            width: 100%;
-            padding: 10px;
-            border: none;
-            background-color: #5cb85c;
-            color: white;
-            border-radius: 4px;
-            cursor: pointer;
-        }
-    </style>
+    <link rel="stylesheet" type="text/css" href="./common.css">
 </head>
 <body>
-    <div class="login-container">
+    <div class="dialog-container">
         <form>
-            <div class="form-group">
+            <div class="dialog-group">
                 <label for="username">用户名:</label>
                 <input type="text" id="username" name="username">
             </div>
-            <div class="form-group">
+            <div class="dialog-group">
                 <label for="password">密码:</label>
                 <input type="password" id="password" name="password">
             </div>
-            <button type="submit" class="login-button">登录</button>
+            <button type="submit" class="action-button">登录</button>
         </form>
     </div>
 </body>

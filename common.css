@@ -1,0 +1,49 @@
+body 
+{
+    font-family: "Segoe UI", Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-image: url(images/background.png);
+    background-attachment: fixed;
+    background-size: cover;
+    background-repeat: no-repeat;
+    margin: auto;
+}
+.dialog-container 
+{
+    width: 300px;
+    padding: 20px;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(5px);
+    border-radius: 16px;
+}
+.dialog-group 
+{
+    margin-bottom: 15px;
+}
+.dialog-group label 
+{
+    text-shadow: rgb(200, 200, 200) 0 0 5px;
+    display: block;
+    margin-bottom: 5px;
+}
+.dialog-group input 
+{
+    width: 100%;
+    padding: 8px;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+}
+.action-button 
+{
+    width: 100%;
+    padding: 8px;
+    border: none;
+    background-color: rgba(92, 184, 92, 0.8);
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
