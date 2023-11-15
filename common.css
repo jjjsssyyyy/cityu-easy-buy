@@ -21,7 +21,7 @@ body
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 16px;
     margin: auto;
-    transition: all 0.333s;
+    transition: all 0.666s;
 }
 .dialog-container:hover
 {
@@ -111,23 +111,26 @@ body
 }
 .dialog-group input 
 {
+    outline: none;
     display: block;
     width: 94.5%;
     padding: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.2);
-    transition: border-color 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+}
+.dialog-group input:invalid 
+{
+    border-color: red;
 }
 .dialog-group input:hover
 {
     border-color: rgba(12, 153, 207, 0.8);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 }
-.dialog-group input:active
+.dialog-group input:focus
 {
-    border-color: rgba(0, 0, 0, 0.6);
-    box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
+    border-color: rgba(12, 153, 207, 1);
 }
 
 .action-button 
