@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>我的订单</title>
+		<link rel="stylesheet" type="text/css" href="./css/common.css">
+		<style type="text/css">
+			@import url("./css/cart.css");
+		</style>
+	</head>
+<style>
+	
+</style>
+</head>
+
+<body>
+	<!--显示菜单的开始-->
+	<div class="tips warp">
+		<ul>
+			<li>
+				<input type="checkbox" name="fav" id="all" onclick="checkTest1(this),checkTest2()" />
+				全选
+			</li>
+			<li>商品</li>
+			<li>单价</li>
+			<li>数量</li>
+			<li>小计</li>
+		</ul>
+	</div>
+	<!--显示菜单的结束-->
+
+	<!--商品详情展示开始-->
+	<div class="info warp">
+		<ul>
+			<li class="info_1"><input type="checkbox" name="fav" onclick="checkTest2()" /> </li>
+			<li class="info_2"> <img
+					src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2FO1CN01h6u96l2Bs31MCtPgm_%21%214216998393-0-cib.jpg&refer=http%3A%2F%2Fcbu01.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703255022&t=8b9d4919772276b1dc84906a16f67b46"
+					width="80px" /> </li>
+			<li class="info_3"><a>23-24赛季巴塞罗那主场球衣</a></li>
+			<li class="info_4"><a>颜色：红色+蓝色</a> </li>
+			<li class="info_5">599HKD</li>
+			<li class="info_6">
+				<button onclick="checkTest3(this,1),checkTest2()">-</button>
+				<input type="text" name="" id="" value="1" />
+				<button class="bot" onclick="checkTest3(this,2),checkTest2()">+</button>
+
+			</li>
+			<li class="info_7">$599</li>
+			<li>
+				<a href="javascript:viod(0)" onclick="checkTest4(this),checkTest2()">删除</a><br />
+				<a>已到我的关注</a>
+			</li>
+		</ul>
+	</div>
+
+	<div class="info warp">
+
+		<ul>
+			<li class="info_1"><input type="checkbox" name="fav" onclick="checkTest2()" /> </li>
+			<li class="info_2"> <img
+					src="https://www.sen31soccershop.com/media/catalog/product/cache/1/image/6edea67cb1d27d7f2b3bf6f60f79801f/m/a/manchester-united-home-jersey-23-24_a1084855-1.png"
+					width="80px" /> </li>
+			<li class="info_3"><a>曼联23-24赛季主场球衣</a></li>
+			<li class="info_4"><a>颜色：红色</a> </li>
+			<li class="info_5">899HKD</li>
+			<li class="info_6">
+				<button onclick="checkTest3(this,1),checkTest2()">-</button>
+				<input type="text" name="" id="" value="1" />
+				<button class="bot" onclick="checkTest3(this,2),checkTest2()">+</button>
+
+			</li>
+			<li class="info_7">$899</li>
+			<li>
+				<a href="javascript:viod(0)" onclick="checkTest4(this),checkTest2()">删除</a><br />
+				<a>已到我的关注</a>
+			</li>
+		</ul>
+
+
+	</div>
+
+	<div class="info warp">
+
+		<ul>
+			<li class="info_1"><input type="checkbox" name="fav" onclick="checkTest2()" /> </li>
+			<li class="info_2"> <img
+					src="https://gd1.alicdn.com/imgextra/i1/2214332385913/O1CN01vslRqp1tYCnwjqdck_!!2214332385913.jpgs"
+					width="80px" /> </li>
+			<li class="info_3"><a>切尔西23-24赛季主场球衣</a></li>
+			<li class="info_4"><a>颜色：蓝色</a> </li>
+			<li class="info_5">699HKD</li>
+			<li class="info_6">
+				<button onclick="checkTest3(this,1),checkTest2()">-</button>
+				<input type="text" name="" id="" value="1" />
+				<button class="bot" onclick="checkTest3(this,2),checkTest2()">+</button>
+
+			</li>
+			<li class="info_7">$699</li>
+			<li>
+				<a href="javascript:viod(0)" onclick="checkTest4(this),checkTest2()">删除</a><br />
+				<a>已到我的关注</a>
+			</li>
+		</ul>
+
+
+	</div>
+	<!--商品详情展示结束-->
+
+	<!--结算开始-->
+
+	<div class="balance warp">
+
+		<ul class="balance_ul1">
+			<li>
+
+				<input type="checkbox" name="fav" id="" value="" onclick="checkTest1(this),checkTest2()" />
+				全选
+			</li>
+			<li><a>删除选中商品</a></li>
+			<li><a>移到我的关注</a></li>
+			<li><a>清除下柜商品</a></li>
+		</ul>
+
+		<ul class="balance_ul2">
+
+			<li>已经选择<span id="snum">0</span>件商品</li>
+			<li>总价 <span id="zongz">￥0</span></li>
+			<li>
+				<button class="butt">去结算</button>
+			</li>
+		</ul>
+	</div>
+</body>

@@ -1,0 +1,36 @@
+body {
+    font-family: Arial, sans-serif;
+  }
+  
+  header, nav, #content, footer {
+    margin: 20px;
+  }
+  
+  header {
+    text-align: center;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    text-decoration: none;
+    color: #333;
+  }
+  
+  #content div {
+    margin-bottom: 20px;
+  }
+  
+  footer {
+    text-align: center;
+    color: #999;
+  }

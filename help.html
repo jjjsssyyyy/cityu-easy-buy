@@ -1,0 +1,70 @@
+<html>
+<head>
+  <title>帮助中心</title>
+  <link rel="stylesheet" type="text/css" href="./css/help.css">
+</head>
+<body>
+  <header>
+    <h1>帮助中心</h1>
+  </header>
+  
+  <nav>
+    <ul>
+      <li><a href="#home">首页</a></li>
+      <li><a href="#orders">订单</a></li>
+      <li><a href="#shipping">配送</a></li>
+      <li><a href="#payments">支付</a></li>
+      <li><a href="#returns">退货</a></li>
+    </ul>
+  </nav>
+  
+  <section id="content">
+    <div id="home">
+      <h2>欢迎来到网购帮助中心</h2>
+      <p>在这里你可以找到有关网购的常见问题和答案。</p>
+    </div>
+  
+    <div id="orders">
+      <h2>订单</h2>
+      <p>这里提供关于下订单、修改订单和取消订单的常见问题解答。</p>
+    </div>
+    
+    <div id="shipping">
+      <h2>配送</h2>
+      <p>这里提供关于配送时间、送货方式和物流跟踪的常见问题解答。</p>
+    </div>
+    
+    <div id="payments">
+      <h2>支付</h2>
+      <p>这里提供关于支付方式、退款和账户安全的常见问题解答。</p>
+    </div>
+    
+    <div id="returns">
+      <h2>退货</h2>
+      <p>这里提供关于退货政策、退款流程和退货标准的常见问题解答。</p>
+    </div>
+  </section>
+  
+  <footer>
+    <p>&copy; 2022 网购帮助中心. All Rights Reserved.</p>
+  </footer>
+
+  <script>
+    window.onload = function() {
+        var navLinks = document.querySelectorAll('nav a');
+        var sections = document.querySelectorAll('#content div');
+        
+        navLinks.forEach(function(link) {
+          link.addEventListener('click', function(event) {
+            event.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            sections.forEach(function(section) {
+              section.style.display = 'none';
+            });
+            target.style.display = 'block';
+          });
+        });
+      };
+  </script>
+</body>
+</html>

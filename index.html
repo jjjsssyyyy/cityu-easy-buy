@@ -1,31 +1,81 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <title>用户登录</title>
-    <link rel="stylesheet" type="text/css" href="./common.css">
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <style type="text/css">
+        @import url("./css/login.css");
+    </style>
 </head>
+
 <body>
-    <div class="dialog-container">
-        <span class="dialog-title-container">
-            <h2>登录</h2>
-            <span class="no-account-tip">
-                没有账号?
-                <a href="./register.html" target="_self">点此注册</a>
-            </span>
-        </span>
-        <form>
-            <div class="dialog-group">
-                <label for="username">用户名:</label>
-                <input type="text" id="username" name="username">
+    <div class="acrylic-background" id="nav-bar-background">
+        <div class="nav-bar">
+            <span></span>
+            <p>CtiyU@好物优选欢迎您</p>
+            <div class="search">
+                <input class="search-box" type="text" placeholder="搜索您想要的好物">
+                <input class="search-button" type="image" src="images/search.png" width="16" height="16">
             </div>
-            <div class="dialog-group">
-                <label for="password">密码:</label>
-                <input type="password" id="password" name="password">
-            </div>
-            <button type="submit" class="action-button">登录</button>
-            <span class="forget-password-tip">
-                <a href="./index.html" target="_self">已有帐号，忘记密码?</a>
-            </span>
-        </form>
+            <ul>
+                <li><a href="index.html">登录</a></li>
+                <li><a href="register.html">注册</a></li>
+                <li>|</li>
+                <li>我的订单</li>
+                <li>|</li>
+                <li>
+                    <span id="default-user-avatar"></span>
+                    个人中心
+                </li>
+                <li>|</li>
+                <li><a href="help.html">帮助中心</a></li>
+            </ul>
+        </div>
     </div>
+    <div class="center">
+        <div class="acrylic-background">
+            <div class="dialog-container">
+                <span class="dialog-title-container">
+                    <h2>登录</h2>
+                    <span class="no-account-tip">
+                        没有账号?
+                        <a href="./register.html" target="_self">点此注册</a>
+                    </span>
+                </span>
+                <form id="loginForm">
+                    <div class="dialog-group">
+                        <label for="username">用户名:</label>
+                        <input type="text" id="username" name="username">
+                    </div>
+                    <div class="dialog-group">
+                        <label for="password">密码:</label>
+                        <input type="password" id="password" name="password">
+                    </div>
+                    <button type="submit" class="action-button"
+                        onClick="window.location.href='product.html'">登录</button>
+                    <span class="forget-password-tip">
+                        <a href="./index.html" target="_self">已有帐号，忘记密码?</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!--底部-->
+    <div class="acrylic-background" id="footer-background">
+        <div class="footer">CtiyU@好物优选</div>
+    </div>
+
+    <script src="./js/L2Dwidget.min.js"></script>
+    <script>
+        L2Dwidget.init({
+            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
+            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
+            "mobile": { "show": true, "scale": 0.5 },
+            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
+        });
+    </script>
 </body>
+
+</html>

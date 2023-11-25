@@ -1,0 +1,34 @@
+.no-account-tip
+{
+    text-align: right;
+    display: inline-block;
+    width: calc(100% - 24px - 29px);
+    transition: all 0.333s;
+}
+.no-account-tip
+{
+    font-size: small;
+}
+
+.forget-password-tip
+{
+    text-align: center;
+    display: inline-block;
+    width: 100%;
+    transition: all 0.333s;
+}
+.forget-password-tip
+{
+    font-size: small;
+}
+.forget-password-tip a
+{
+    display: inline;
+    text-decoration: none;
+    font-size: small;
+    color:cornflowerblue;
+}
+.forget-password-tip a:hover
+{
+    text-decoration: underline;
+}

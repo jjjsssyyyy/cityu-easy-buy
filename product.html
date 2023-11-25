@@ -1,502 +1,138 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>详情页</title>
-    <style>
-        html {
-            height: 100%;
-        }
-
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100%;
-            display: flex;
-            flex-direction: column;
-        }
-
-        /*导航栏*/
-        .top {
-            display: flex;
-            justify-content: center;
-            width: 100%;
-            height: 40px;
-            background-color: #333333;
-            color: #C4C4C4;
-            font-size: 12px;
-        }
-
-        ul {
-            list-style-type: none;
-            margin-left: 10%;
-        }
-
-        ul li {
-            float: left;
-            padding: 0 10px;
-        }
-
-        .top p {
-            margin-right: 10%;
-        }
-        a {
-            text-decoration: none;
-            color: inherit;
-            font-family: inherit;
-        }
-        a:hover{
-            text-decoration: underline;
-            color:#008264;
-        }
-        /* 搜索栏样式 */
-        .header {
-            width: 930px;
-            margin: auto;
-            display: flex;
-            justify-content: space-between;
-            margin-top: 25px;
-        }
-
-        .header input[type=text] {
-            width: 347px;
-            height: 25px;
-            border: 0.5px solid #008264;
-            box-sizing: border-box;
-            border-radius: 100px;
-            font-size: 12px;
-        }
-
-        .header input[type=submit] {
-            position: relative;
-            right: 69px;
-            width: 65px;
-            height: 26px;
-            background-color: #008264;
-            border: none;
-            border-radius: 100px;
-            color: #FFFFFF;
-            cursor: pointer;
-            font-size: 12px;
-        }
-
-        .header input[type=text]:focus {
-            outline: none;
-            border: 2px solid #008264;
-        }
-
-        /*搜索区域下面的横线*/
-        .line {
-            border: 0.5px solid #E7E7E7;
-            margin-top: 24px;
-        }
-
-        /*详情内容大盒子*/
-        .shop {
-            width: 930px;
-            display: flex;
-            flex-direction: column;
-            flex: auto;
-            margin: auto;
-        }
-
-        .container {
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            margin-top: 40px;
-        }
-
-        /*商品介绍*/
-        .concealor {
-            display: flex;
-            flex-direction: column;
-        }
-
-        .pname {
-            font-size: 26px;
-            color: #333333;
-        }
-
-        .pdetail {
-            font-size: 12px;
-            color: #787878;
-            padding: 0 0 10px 0;
-        }
-
-        .content {
-            display: flex;
-            width: 437px;
-            height: 131px;
-            background-color: #F9F9F9;
-        }
-
-        .left {
-            margin-left: 12px;
-            margin-right: 50px;
-        }
-
-        .left p {
-            font-weight: 500;
-            font-size: 12px;
-            color: #333333;
-            padding: 14px 0;
-        }
-
-        .price {
-            font-weight: 800;
-            font-size: 14px;
-            color: #B02418;
-        }
-
-        .free {
-            font-size: 13px;
-            color: #333333;
-        }
-
-        /* 为ac类中的段落元素添加样式，要求：字体大小为12px，粗细为500，
-        颜色为#333333，上下和左右内边距分别为0 13px */
-        .ac p {
-            font-size: 12px;
-            font-weight: 500;
-            color: #333333;
-            padding: 0 13px;
-        }
-
-        /* 为area类添加样式，要求：弹性布局，上外边距为24px */
-        .area {
-            display: flex;
-            margin-top: 24px;
-        }
-
-        /* 为area类中的span标签添加样式，要求：字体颜色为#727272 */
-        .area span {
-            color: #727272;
-        }
-
-        /* 为scolor类添加样式，要求：弹性布局 */
-        .scolor {
-            display: flex;
-        }
-
-        /* 为scolor类中的div标签添加样式，要求：
-        1、设置边框宽度为0.5px，实线，颜色为#2F5DF2
-        2、外边距为5px，字体大小为12px，粗细为500，颜色为#727272
-        3、宽度80px，高度27px，文本居中对齐，行高为27px */
-        .scolor div {
-            border: 0.5px solid #008264;
-            margin: 5px;
-            font-size: 12px;
-            font-weight: 500;
-            color: #727272;
-            width: 80px;
-            height: 27px;
-            text-align: center;
-            line-height: 27px;
-        }
-
-        .number,.box {
-            display: flex;
-        }
-
-        .number p {
-            margin-top: 26px;
-        }
-
-        .number .box {
-            margin-top: 22px;
-        }
-
-        /*加减盒子边框*/
-        .box div {
-            border: 0.5px solid #CCCCCC;
-            position: relative;
-            width: 27px;
-            height: 28px;
-        }
-
-        /*减号横线*/
-        .box1::before {
-            content: "";
-            position: absolute;
-            left: 22%;
-            top: 50%;
-            width: 16px;
-            border-top: 2px solid #CCCCCC;
-        }
-
-        input[type="number"] {
-            width: 40px;
-            height: 24px;
-            color: #333333;
-            font-weight: 500px;
-            font-size: 16px;
-            text-align: center;
-            line-height: 28px;
-            box-sizing: content-box;
-        }
-
-        /*加号横线*/
-        .box2::before {
-            content: "";
-            position: absolute;
-            left: 22%;
-            top: 50%;
-            width: 16px;
-            border-top: 2px solid #000000;
-        }
-
-        /*加号竖线*/
-        .box2::after {
-            content: "";
-            position: absolute;
-            left: 48%;
-            top: 24%;
-            height: 16px;
-            border-left: 2px solid #000000;
-        }
-
-        .btn {
-            display: flex;
-            margin-top: 35px;
-        }
-
-        /*加入购物车*/
-        .add {
-            width: 145px;
-            height: 44px;
-            background-color: #008264;
-            border: 1px solid #008264;
-            text-align: center;
-            line-height: 44px;
-            border-radius: 2px;
-        }
-
-        .add a {
-            text-decoration: none;
-            color: #FFFFFF;
-            font-size: 16px;
-        }
-
-        /*立即购买*/
-        .buy {
-            width: 145px;
-            height: 44px;
-            text-align: center;
-            line-height: 44px;
-            border: 1px solid #008264;
-            border-radius: 2px;
-            margin-left: 12px;
-        }
-
-        .buy a {
-            text-decoration: none;
-            color: #008264;
-            font-size: 16px;
-        }
-
-        /*收藏，客服*/
-        .fav {
-            width: 44px;
-            height: 44px;
-            border: 1px solid #999999;
-            border-radius: 2px;
-            color: #999999;
-            text-align: center;
-            font-size: 12px;
-            margin-left: 12px;
-        }
-
-        .fav img {
-            padding-top: 2px;
-        }
-
-        /* TODO 为botop类添加样式，要求：
-            1、弹性布局
-            2、宽度和高度分别为840px和33px，背景颜色为#F7F7F7
-            3、字体大小为13px，行高为33px，颜色为#838383，文本居中对齐
-            4、上，右，下，左四个外边距分别为96px auto 0 auto */
-        .botop{
-            display:flex;
-            width:840px;
-            height:33px;
-            background-color:#F7F7F7;
-            font-size:13px;
-            line-height:33px;
-            color:#838383;
-            text-align:center;
-            margin:96px auto 0 auto;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        .intr {
-            width: 100px;
-        }
-        /*TODO  为middle类添加样式，要求：
-            1、宽度为100px，背景颜色为#2F5DF2
-            2、字体颜色为#FFFFFF，左右外边距分别为38px 90px */
-        .middle{
-            width:100px;
-            background-color:#008264;
-            color:#FFFFFF;
-            margin-left:38px;
-            margin-right:90px;
-            
-        }
-        
-        
-        
-        
-        
-        
-        /* TODO 为bobottom类添加样式，要求：
-            1、设置宽度和高度分别为840px和160px，背景颜色为#F7F7F7
-            2、设置字体大小为13px，行高为160px，颜色为#838383，文本居中对齐，外边距为auto */
-        .bobottom{
-            width:840px;
-            height:160px;
-            background-color:#F7F7F7;
-            font-size:13px;
-            line-height:160px;
-            color:#838383;
-            text-align:center;
-            margin:auto;
-        }
-        
-        
-        
-        
-        
-        
-        
-        
-        
-
-        /*底部*/
-        .footer {
-            width: 100%;
-            height: 40px;
-            background-color: #333333;
-            color: #C4C4C4;
-            font-size: 12px;
-            text-align: center;
-            line-height: 40px;
-            margin-top: 20px;
-        }
+    <link rel="stylesheet" type="text/css" href="./css/common.css">
+    <style type="text/css">
+        @import url("./css/product.css");
     </style>
 </head>
 
-<body>
-
-    <div class="top" id="top">
-        <p>优选欢迎你</p>
-        <ul>
-            <li><a href="index.html">登录</a></li>
-            <li><a href="register.html">注册</a></li>
-            <li>|</li>
-            <li>我的订单</li>
-            <li>|</li>
-            <li>个人中心</li>
-            <li>|</li>
-            <li>帮助中心</li>
-        </ul>
-    </div>
-    <!--搜索区域-->
-    <div class="header">
-        <img src="./images/title_picture.png" width="127" height="32">
-        <form action="#">
-            <input type="text" placeholder="请输入搜索内容">
-            <input type="submit" value="搜一搜">
-        </form>
-    </div>
-    <p class="line"></p>
-    <!--内容区域-->
-    <div class="shop">
-        <div class="container">
-            <!--详情部分-->
-            <div class="concealor">
-                <div>
-                    <p class="pname">CtiyUFDS</p>
-                    <p class="pdetail">成功人士的不二之选</p>
-                </div>
-                <div class="content">
-                    <div class="left">
-                        <p>售价</p>
-                        <p>服务</p>
-                    </div>
-                    <div class="right">
-                        <div>
-                            <p class="price">¥ 9.9</p>
-                            <p class="free">满9.9包邮</p>
-                        </div>
-                        <div class="free">
-                            <p>支持7天无理由退货<br>
-                                由成大优选发货并提供售后</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="ac">
-                    <div class="area">
-                        <p>配送区域</p>
-                        <p>广东省 珠海市 香洲区 有货 <span>修改</span></p>
-                    </div>
-                    <div class="scolor">
-                        <p>选择颜色</p>
-                        <div><span>数据科学学院</span></div>
-                        <div><span>商学院</span></div>
-                        <div><span>金融学院</span></div>
-                    </div>
-                    <div class="number">
-                        <p>数量</p>
-                        <div class="box">
-                            <div class="box1"></div>
-                            <input type="number" value="1" min="0">
-                            <div class="box2"></div>
-                        </div>
-                    </div>
-                </div>
-                <!--购买-->
-                <div class="btn">
-                    <div class="add"><a href="javascript:alert('加入成功')">加入购物车</a></div>
-                    <div class="buy"><a href="javascript:alert('购买成功')">立即购买</a></div>
-                    <div class="fav">
-                        <img src="http://nocturne.bczcdn.com/file/1655360326007_90528/Vector.png" width="20"><br>
-                        <span>收藏</span>
-                    </div>
-                    <div class="fav">
-                        <img src="http://nocturne.bczcdn.com/file/1655359646000_40688/headset.svg" width="20"><br>
-                        <span>客服</span>
-                    </div>
-                </div>
+<body style="background-image:url(./images/cityu.jpg)">
+    <div class="acrylic-background" id="nav-bar-background">
+        <div class="nav-bar">
+            <span></span>
+            <p>CtiyU@好物优选欢迎您</p>
+            <div class="search">
+                <input class="search-box" type="text" placeholder="搜索您想要的好物">
+                <input class="search-button" type="image" src="images/search.png" width="16" height="16">
             </div>
+            <ul>
+                <li>登录</li>
+                <li>注册</li>
+                <li>|</li>
+                <li><a href="cart.html">我的订单</a></li>
+                <li>|</li>
+                <li>
+                    <a href="self.html">
+                        <span id="user-avatar"></span>个人中心
+                    </a>
+                </li>
+                <li>|</li>
+                <li><a href="help.html">帮助中心</a></li>
+            </ul>
         </div>
-        <!--评价-->
-        <div>
-            <div class="botop">
-                <div class="intr"><span>商品介绍</span></div>
-                <div class="middle"><span>商品评价(0)</span></div>
-                <div class="intr"><span>规格与包装</span></div>
+    </div>
+
+    <!--内容区域-->
+    <div class="aero-background">
+        <div class="shop">
+            <div class="container">
+                <!--详情部分-->
+                <div class="concealor">
+                    <div>
+                        <p class="pname">CtiyU FDS</p>
+                        <p class="pdetail">成功人士的不二之选</p>
+                    </div>
+                    <div class="content">
+                        <div class="left">
+                            <p>售价</p>
+                            <p>服务</p>
+                        </div>
+                        <div class="right">
+                            <div>
+                                <p class="price">¥ 9.9</p>
+                                <p class="free">满9.9包邮</p>
+                            </div>
+                            <div class="free">
+                                <p>支持7天无理由退货<br>
+                                    由城大优选发货并提供售后</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="ac">
+                        <div class="area">
+                            <p>配送区域</p>
+                            <p>广东省 珠海市 香洲区 有货 <span>修改</span></p>
+                        </div>
+                        <div class="scolor">
+                            <p>选择颜色</p>
+                            <div><span>数据科学学院</span></div>
+                            <div><span>商学院</span></div>
+                            <div><span>金融学院</span></div>
+                        </div>
+                        <div class="number">
+                            <p>数量</p>
+                            <div class="box">
+                                <div class="box1"></div>
+                                <input type="number" value="1" min="0">
+                                <div class="box2"></div>
+                            </div>
+                        </div>
+                    </div>
+    
+                    <!--购买-->
+                    <div class="btn">
+                        <div class="add"><a href="javascript:alert('加入成功')">加入购物车</a></div>
+                        <div class="buy"><a href="javascript:alert('购买成功')">立即购买</a></div>
+                        <div class="fav">
+                            <img src="http://nocturne.bczcdn.com/file/1655360326007_90528/Vector.png" width="20"><br>
+                            <span>收藏</span>
+                        </div>
+                        <div class="fav">
+                            <img src="http://nocturne.bczcdn.com/file/1655359646000_40688/headset.svg" width="20"><br>
+                            <span>客服</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="bobottom">
-                <p>居然还没有评论~</p>
+    
+            <!--评价-->
+            <div>
+                <div class="botop">
+                    <div class="intr"><span>商品介绍</span></div>
+                    <div class="middle"><span>商品评价(0)</span></div>
+                    <div class="intr"><span>规格与包装</span></div>
+                </div>
+                <div class="bobottom">
+                    <p>居然还没有评论~</p>
+                </div>
+            </div>
+
+            <div style="height: 40px; width:100%">
+
             </div>
         </div>
     </div>
 
     <!--底部-->
-    <div class="footer">CtiyU@好物优选</div>
+    <div class="acrylic-background" id="footer-background">
+        <div class="footer">CtiyU@好物优选</div>
+    </div>
+
+
+    <script src="./js/L2Dwidget.min.js"></script>
+    <script>
+        L2Dwidget.init({
+            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
+            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
+            "mobile": { "show": true, "scale": 0.5 },
+            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
+        });
+    </script>
 </body>
 
 </html>
