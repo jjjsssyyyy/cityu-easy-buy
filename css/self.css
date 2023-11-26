@@ -1,0 +1,42 @@
+#personal-info-container-background
+{
+  border-radius: 0px;
+  margin: 24px auto;
+  margin-bottom: 60px;
+  width: 60%;
+}
+
+.acrylic-background
+{
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th, td 
+{
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 8px;
+    text-align: left;
+}
+
+th {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+form {
+    max-width: 400px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}

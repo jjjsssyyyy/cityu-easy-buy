@@ -28,7 +28,7 @@
 
 .pdetail {
     font-size: 12px;
-    color: #787878;
+    color: rgba(0, 0, 0, 0.8);
     padding: 0 0 10px 0;
 }
 
@@ -60,7 +60,7 @@
 
 .free {
     font-size: 13px;
-    color: #333333;
+    color: black;
     text-shadow: rgb(255, 255, 255) 0 0 30px;
 }
 
@@ -69,7 +69,7 @@
 .ac p {
     font-size: 12px;
     font-weight: 500;
-    color: #333333;
+    color: black;
     text-shadow: rgb(255, 255, 255) 0 0 30px;
     padding: 0 13px;
 }
@@ -82,7 +82,7 @@
 
 /* 为area类中的span标签添加样式，要求：字体颜色为#727272 */
 .area span {
-    color: #727272;
+    color: rgba(0, 0, 0, 0.4);;
 }
 
 /* 为scolor类添加样式，要求：弹性布局 */
@@ -208,7 +208,7 @@ input[type="number"] {
     height: 44px;
     text-align: center;
     line-height: 44px;
-    border: 1px solid #008264;
+    border: 1px solid #006048;
     border-radius: 4px;
     margin-left: 12px;
     background-color: rgba(255, 255, 255, 0.6);
@@ -224,10 +224,10 @@ input[type="number"] {
 .fav {
     width: 44px;
     height: 44px;
-    border: 1px solid #999999;
+    border: 1px solid rgba(255, 255, 255, 0.2);
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.2);
-    color: #999999;
+    color: rgba(0, 0, 0, 0.2);
     text-align: center;
     font-size: 12px;
     margin-left: 12px;
@@ -253,7 +253,7 @@ input[type="number"] {
     color:#838383;
     text-align:center;
     margin:16px auto auto auto;
-    border-radius: 8px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
 }
 
 .intr {
@@ -268,7 +268,6 @@ input[type="number"] {
     color:#FFFFFF;
     margin-left:38px;
     margin-right:90px;
-    border-radius: 4px;
 }
 
 /* TODO 为bobottom类添加样式，要求：
@@ -283,5 +282,5 @@ input[type="number"] {
     color:#838383;
     text-align:center;
     margin:auto;
-    border-radius: 8px;
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
 }
