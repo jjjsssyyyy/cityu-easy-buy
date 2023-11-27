@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-Hans-CN">
 
 <head>
     <meta charset="UTF-8">
@@ -13,23 +13,24 @@
     <div class="acrylic-background" id="nav-bar-background">
         <div class="nav-bar">
             <h3 class="nav-bar-title">注册页面</h1>
-            <span></span>
-            <p>CtiyU@好物优选欢迎您</p>
-            <div class="search">
-                <input class="search-box" type="text" placeholder="搜索您想要的好物">
-                <input class="search-button" type="image" src="images/search.png" width="16" height="16">
-            </div>
-            <ul>
-                <li><a href="index.html">登录</a></li>
-                <li><a href="register.html">注册</a></li>
-                <li>|</li>
-                <li>
-                    <span id="default-user-avatar"></span>
-                    个人中心
-                </li>
-                <li>|</li>
-                <li><a href="help.html">帮助中心</a></li>
-            </ul>
+                <span></span>
+                <p>CtiyU@好物优选欢迎您</p>
+                <div class="search">
+                    <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
+                    <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16"
+                        height="16">
+                </div>
+                <ul>
+                    <li><a href="index.html">登录</a></li>
+                    <li><a href="register.html">注册</a></li>
+                    <li>|</li>
+                    <li>
+                        <span id="default-user-avatar"></span>
+                        个人中心
+                    </li>
+                    <li>|</li>
+                    <li><a href="help.html">帮助中心</a></li>
+                </ul>
         </div>
     </div>
     <div class="center">
@@ -61,8 +62,8 @@
         </div>
     </div>
 
-     <!--底部-->
-     <div class="acrylic-background" id="footer-background">
+    <!--底部-->
+    <div class="acrylic-background" id="footer-background">
         <div class="footer">CtiyU@好物优选</div>
     </div>
 
@@ -78,11 +79,11 @@
                 event.preventDefault(); // 阻止表单提交
             }
         });
-        L2Dwidget.init({ 
-            "model": { "jsonPath":"https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos":0.5, "vHeadPos":0.618 },
-            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 }, 
+        L2Dwidget.init({
+            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
+            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
             "mobile": { "show": true, "scale": 0.5 },
-            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 } 
+            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
     </script>
 </body>

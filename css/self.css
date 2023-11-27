@@ -1,3 +1,8 @@
+body
+{
+    background-image:url(../images/self-background.jpg)
+}
+
 #personal-info-container-background
 {
   border-radius: 0px;

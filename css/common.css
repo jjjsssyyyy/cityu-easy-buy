@@ -35,6 +35,7 @@ body
 .acrylic-background
 {
     border-radius: inherit;
+    -webkit-backdrop-filter: blur(30px) saturate(2) contrast(125%);
     backdrop-filter: blur(30px) saturate(2) contrast(125%);
     background-color: rgba(255, 255, 255, 0.4);
 }
@@ -56,6 +57,7 @@ body
 
 .aero-background
 {
+    -webkit-backdrop-filter: blur(30px) saturate(2) contrast(125%);
     backdrop-filter: blur(5px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -220,7 +222,7 @@ a
 }
 .search-box:hover
 {
-    border-color: rgba(0, 0, 0, 0.8);
+    border-color: rgba(0, 0, 0, 0.4);
     transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
 .search-box:focus
