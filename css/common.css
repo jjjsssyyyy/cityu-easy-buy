@@ -10,8 +10,7 @@ html body
 }
 body 
 {
-    font-family: "Segoe UI", Arial, sans-serif;
-    background-image: url(../images/background.png);
+    font-family: "微软雅黑", "Microsoft Yahei UI", "Segoe UI", Arial, sans-serif;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
