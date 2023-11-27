@@ -35,7 +35,7 @@ body
 .acrylic-background
 {
     border-radius: inherit;
-    backdrop-filter: blur(30px) saturate(2);
+    backdrop-filter: blur(30px) saturate(2) contrast(125%);
     background-color: rgba(255, 255, 255, 0.4);
 }
 .acrylic-background::before
@@ -56,7 +56,7 @@ body
 
 .aero-background
 {
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(5px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
@@ -68,6 +68,7 @@ body
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     margin: auto;
+    text-shadow: rgb(255, 255, 255) 0 0 16px;
     transition: all 0.666s;
 }
 
@@ -189,6 +190,7 @@ a
     border-radius: inherit;
     color: rgba(143, 143, 143, 0.8);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    text-shadow: rgb(255, 255, 255) 0 0 16px;
     transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
 .nav-bar:hover
@@ -333,6 +335,7 @@ a
 .footer 
 {
     border-radius: inherit;
+    text-shadow: rgb(255, 255, 255) 0 0 8px;
     color: rgba(143, 143, 143, 0.8);
     transition: all 0.333s cubic-bezier(0, 0, 0, 1);
     color: rgba(0, 0, 0, 0.6);
@@ -347,24 +350,36 @@ summary
   list-style: none;
   background: rgba(255, 255, 255, 0.2);
   padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   outline: none;
   text-align: center;
   transition: all 0.333s cubic-bezier(0, 0, 0, 1);
-  text-shadow: rgb(255, 255, 255) 0 0 8px;
+  text-shadow: rgb(255, 255, 255) 0 0 16px;
+  border-radius: inherit;
 }
 summary:hover
 {
   text-decoration: none;
+  background-color: rgba(255, 255, 255, 0.5);
+  transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
 
 details {
   box-sizing: border-box;
   margin-top: 5px;
+  border-radius: inherit;
+  transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+}
+details:hover
+{
+    box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
+    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
 .inner-content {
   border-top: none;
   padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(0, 0, 0, 0.2);
   border-top: none;
+  text-shadow: rgb(255, 255, 255) 0 0 16px;
+  border-radius: inherit;
 }
