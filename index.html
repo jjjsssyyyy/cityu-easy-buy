@@ -41,21 +41,21 @@
                     <h2>登录</h2>
                     <span class="no-account-tip">
                         没有账号?
-                        <a href="register.html" target="_self">点此注册</a>
+                        <a class="hover-underline" href="register.html" target="_self">点此注册</a>
                     </span>
                 </span>
                 <form id="loginForm">
                     <div class="dialog-group">
                         <label for="username">用户名:</label>
-                        <input type="text" id="username" name="username" required>
+                        <input type="text" id="username" name="username" autocomplete="username" required>
                     </div>
                     <div class="dialog-group">
                         <label for="password">密码:</label>
-                        <input type="password" id="password" name="password" required>
+                        <input type="password" id="password" name="password" autocomplete="current-password" required>
                     </div>
                     <button type="submit" class="action-button">登录</button>
                     <span class="forget-password-tip">
-                        <a href="javascript:alert('抱歉，目前还不支持此操作喵!')">已有帐号，忘记密码?</a>
+                        <a class="hover-underline" href="javascript:catAlert('抱歉，目前还不支持此操作喵!', 5000)">已有帐号，忘记密码?</a>
                     </span>
                 </form>
             </div>

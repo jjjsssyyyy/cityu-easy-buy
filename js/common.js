@@ -1,8 +1,19 @@
+const tips = [
+    "你问我是谁？我可是CityU好物优选的站长喵~",
+    "千万不要错过CityU这件好物喵~",
+    "原神...？启动喵！",
+    "要玩音游吗？我有十分甚至九分擅长Phigros喵!",
+    "哼哼哼喵啊啊啊啊啊啊啊~",
+    "哼~本喵才不喜欢被你们摸呢~!",
+    "你干嘛啊~嗨嗨哟喵~"
+];
+var timer;
+
 function shakeElement(id) {
     let element = document.getElementById(id)
     if (element) {
         element.classList.add('shake')
-        setTimeout(() => { element.classList.remove('shake') }, 800)
+        setTimeout(() => { element.classList.remove('shake') }, 800);
     }
 }
 function doSearch() {
@@ -11,32 +22,68 @@ function doSearch() {
         shakeElement("search");
     }
     else {
-        if (searchText == "CityU") {
+        if (searchText.toLowerCase() === "CityU".toLowerCase()) {
             window.location.href = "product.html";
         }
         else {
-            alert("没找到对应的好物喵~");
+            catAlert('没找到对应的好物喵~', 5000);
         }
     }
 }
+function catAlert(text, timeout)
+{
+    var content = document.getElementById('live2d-widget-dialog-content');
+    content.innerHTML = text;
+
+    var dialog = document.getElementById('live2d-widget-dialog');
+    dialog.style.opacity = 1;
+    if (timer)
+    {
+        clearTimeout(timer);
+    }
+    timer = setTimeout((element) => { element.style.opacity = 0; }, timeout, dialog);
+    // dialog.animate({
+    //     opacity: [0, 1]
+    //   }, {
+    //     duration: 333,
+    //     easing: "ease-in-out"
+    //   }).onfinish = () => { 
+    //     dialog.style.opacity = 1; 
+    //     setTimeout((element) => { element.style.opacity = 0; }, 8000, dialog);
+    // };
+}
+
 window.onload = function () {
     document.getElementById('search-button').addEventListener('click', function (event) {
         doSearch();
     });
     document.getElementById('search-box').addEventListener('keydown', function (event) {
-        if (window.event) {
-            event_e = window.event;
-        }
-        var keycode = event_e.charCode || event_e.keyCode;
+        var keycode = event.charCode || event.keyCode;
         if (keycode == '13') {
             doSearch();
         }
     });
-    document.body.classList.remove("css-transitions-only-after-page-load");
+
+    var dialogContent = document.createElement("div");
+    dialogContent.id = "live2d-widget-dialog-content";
+
+    var dialog = document.getElementsByClassName('live2d-widget-dialog')[0];
+    dialog.classList.add("acrylic-background");
+    dialog.id = "live2d-widget-dialog";
+    dialog.appendChild(dialogContent);
+    // 页面载入的问候
+    setTimeout(function() { if (!timer) {catAlert("欢迎来到" + document.title + "喵~", 5000);} }, 200);
+    setTimeout(function() { document.body.classList.remove("css-transitions-only-after-page-load"); }, 200);
+    // 让猫猫随机说一些话
+    window.setInterval(function() { catAlert(tips[Math.floor(Math.random()*tips.length)], 5000); }, 15000);
 }
 L2Dwidget.init({
     "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
-    "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
+    "display": { "position": "left", "hOffset": 40, "vOffset": -60 },
     "mobile": { "show": true, "scale": 0.5 },
-    "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
+    "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 },
+    "dialog": {
+    	"enable": true,
+    	"script": {}
+	}
 });

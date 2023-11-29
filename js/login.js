@@ -3,7 +3,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     var password = document.getElementById('password').value;
 
     if (username != "Huh?" || password != "114514") {
-        alert('用户名称或密码错误喵!');
+        catAlert('用户名称或密码错误喵!', 5000);
     }
     else
     {

@@ -31,7 +31,10 @@ body
     font-size: small;
     color:cornflowerblue;
 }
-.forget-password-tip a:hover
+
+.forget-password-tip .hover-underline:after
 {
-    text-decoration: underline;
+    height: 1px;
+    background-color: rgba(100, 149, 237, 0.8);
+    bottom: -4px;
 }
