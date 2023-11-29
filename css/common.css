@@ -1,5 +1,4 @@
-html body
-{
+html body {
     margin: 0;
     padding: 0;
     position: absolute;
@@ -8,20 +7,70 @@ html body
     width: 100%;
     min-height: 100%;
 }
-body 
+
+/* 美化滚动条 */
+::-webkit-scrollbar {
+    width: 12px;
+}
+::-webkit-scrollbar-thumb {
+    border: 2px solid transparent;
+    border-radius: 8px;
+    background-color: rgba(0, 0, 0, 0.6);
+    background-clip: content-box;
+}
+::-webkit-scrollbar-thumb:hover
 {
-    font-family: "微软雅黑", "Microsoft Yahei UI", "Segoe UI", Arial, sans-serif;
+    background-color: rgba(0, 0, 0, 1);
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0.6;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: "微软雅黑", "Microsoft Yahei UI", "Segoe UI", "Segoe UI Web (West European)", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
     background-attachment: fixed;
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     border-radius: 16px;
     margin: 0px;
+    overflow: overlay;
+}
+/* body::after
+{
+    content: "Loading...";
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    position: absolute;
+    z-index: 999999;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(255, 255, 255, 0.8);
+} */
+
+@keyframes popInScale {
+    from {
+        opacity: 0.8;
+        transform: scale3d(95%, 95%, 100%);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
+
 /* 居中专用 */
-.center
-{
+.center {
     margin: 0;
     border-radius: inherit;
     position: absolute;
@@ -31,15 +80,14 @@ body
 }
 
 /* 亚克力材质 */
-.acrylic-background
-{
+.acrylic-background {
     border-radius: inherit;
     -webkit-backdrop-filter: blur(30px) saturate(2) contrast(125%);
     backdrop-filter: blur(30px) saturate(2) contrast(125%);
     background-color: rgba(255, 255, 255, 0.4);
 }
-.acrylic-background::before
-{
+
+.acrylic-background::before {
     content: "";
     background-image: url(data:image/png;base64,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);
     background-size: 50px;
@@ -54,63 +102,62 @@ body
     margin: auto;
 }
 
-.aero-background
-{
-    -webkit-backdrop-filter: blur(30px) saturate(2) contrast(125%);
+.aero-background {
+    -webkit-backdrop-filter: blur(5px) saturate(150%);
     backdrop-filter: blur(5px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* 通用对话框外观 */
-.dialog-container 
-{
+.dialog-container {
+    animation-duration: 0.333s;
+    animation-fill-mode: both;
+    animation-name: popInScale;
+    animation-timing-function: cubic-bezier(0, 0, 0, 1);
+
     width: 300px;
     padding: 20px;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
     border-radius: 16px;
     margin: auto;
     text-shadow: rgb(255, 255, 255) 0 0 16px;
-    transition: all 0.666s;
 }
 
-.dialog-title-container
-{
+.dialog-title-container {
     display: block;
 }
-.dialog-title-container h2
-{
+
+.dialog-title-container h2 {
     display: inline-block;
 }
 
-a
-{
+a {
     text-decoration: none;
 }
+
 /* 对话框通用链接 */
-.dialog-title-container a
-{
+.dialog-title-container a {
     display: inline;
     font-size: small;
-    color:cornflowerblue;
+    color: cornflowerblue;
 }
-.dialog-title-container a:hover
-{
+
+.dialog-title-container a:hover {
     text-decoration: underline;
 }
 
 /* 通用对话框元素分组 */
-.dialog-group 
-{
+.dialog-group {
     margin-bottom: 15px;
 }
-.dialog-group label 
-{
+
+.dialog-group label {
     text-shadow: rgb(200, 200, 200) 0 0 8px;
     display: block;
     margin-bottom: 5px;
 }
-.dialog-group input 
-{
+
+.dialog-group input {
     outline: none;
     display: block;
     width: 94.5%;
@@ -118,27 +165,23 @@ a
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
     background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: border-color 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.dialog-group input:invalid 
-{
+
+.dialog-group input:invalid {
     border-color: red;
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.dialog-group input:hover
-{
+
+.dialog-group input:hover {
     border-color: rgba(12, 153, 207, 0.8);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.dialog-group input:focus
-{
+
+.dialog-group input:focus {
     border-color: rgba(12, 153, 207, 1);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
 
 /* 通用按钮样式 */
-.action-button 
-{
+.action-button {
     width: 100%;
     padding: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -146,41 +189,63 @@ a
     color: black;
     border-radius: 4px;
     cursor: pointer;
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: box-shadow 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.action-button:hover
-{
+
+.action-button:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
-.action-button:after
-{
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+
+.content-container {
+    min-width: 100%;
+    top: 60px;
+    bottom: 40px;
+    min-height: calc(100% - 100px);
+    overflow: auto;
+    position: fixed;
 }
-.action-button:active:after
-{
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+
+@keyframes popInTop {
+    from {
+        opacity: 0.8;
+        transform: translate3d(0, -100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
 }
 
 /* 顶部栏样式 */
-.nav-bar-title
-{
+.nav-bar-title {
     position: absolute;
     left: 10px;
     color: black;
 }
-#nav-bar-background
-{
+
+#nav-bar-background {
+    /* animation-duration: 0.333s;
+    animation-fill-mode: both;
+    animation-name: popInTop;
+    animation-timing-function: cubic-bezier(0, 0, 0, 1); */
+
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 9999;
+
     border-radius: 0px;
     background-color: rgba(255, 255, 255, 0.4);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: background-color 0.333s cubic-bezier(0, 0, 0, 1);
 }
-#nav-bar-background:hover
-{
+
+#nav-bar-background:hover {
     background-color: rgba(255, 255, 255, 0.5);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: background-color 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.nav-bar
-{
+
+.nav-bar {
     display: flex;
     justify-content: center;
     margin: 0;
@@ -192,94 +257,122 @@ a
     color: rgba(143, 143, 143, 0.8);
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
     text-shadow: rgb(255, 255, 255) 0 0 16px;
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: box-shadow 0.333s cubic-bezier(0, 0, 0, 1);
+    white-space: nowrap;
 }
-.nav-bar:hover
-{
+
+.nav-bar:hover {
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.8);
 }
 
-
-.search
-{
+/* 搜索框 */
+.search {
+    width: calc(16% - 24px);
+    min-width: 128px;
     margin: 14px 4px;
-}
-.search-button
-{
-    transform: translate(-30px, 4px);
-    font-size: small;
-}
-.search-box
-{
-    outline: none;
-    padding: 8px;
-    width: 300px;
+    white-space: nowrap;
     border: 1px solid rgba(0, 0, 0, 0.1);
     border-radius: 4px;
+    transition: 0.333s cubic-bezier(0, 0, 0, 1);
+    transition-property: width border-color;
     background-color: rgba(255, 255, 255, 0.2);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
-}
-.search-box:hover
-{
-    border-color: rgba(0, 0, 0, 0.4);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
-}
-.search-box:focus
-{
-    border-color: rgba(0, 0, 0, 1);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    align-items: center;
 }
 
-.nav-bar ul 
-{
-    list-style-type: none;
-    margin-left: 12px;
+.search:hover {
+    width: 16%;
+    border-color: rgba(0, 0, 0, 0.4);
 }
-.nav-bar ul li 
-{
+
+.search:focus-within {
+    width: 16%;
+    border-color: rgba(0, 0, 0, 1);
+    background-color: rgba(255, 255, 255, 0.6);
+    transition: 0.333s cubic-bezier(0, 0, 0, 1);
+    transition-property: width border-color;
+}
+
+.search-button {
+    opacity: 0.6;
+    transition: 0.333s cubic-bezier(0, 0, 0, 1);
+    transition-property: opacity transform
+}
+
+.search-button:hover {
+    opacity: 1;
+    transform: scale(125%);
+}
+
+.search-button-container {
+    width: 32px;
+    height: 100%;
+    float: right;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.search-box {
+    outline: none;
+    padding: 8px;
+    padding-right: 0px;
+    width: calc(100% - 40px);
+    border: none;
+    background-color: transparent;
+    display: inline;
+}
+
+.nav-bar ul {
+    list-style-type: none;
+    margin-left: 0%;
+    white-space: nowrap;
+    display: inline;
+}
+
+.nav-bar ul li {
     float: left;
     padding: 0 10px;
-    line-height: 200%;;
+    line-height: 200%;
+    white-space: nowrap;
+    display: inline;
 }
-.nav-bar li a
-{
+
+.nav-bar li a {
     padding: 0px;
     font-size: medium;
     color: rgba(8, 5, 5, 0.8);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.nav-bar li a:hover
-{
+
+.nav-bar li a:hover {
     color: rgba(0, 0, 0, 1);
-    text-shadow: rgb(43, 43, 43) 0 0 30px;
+    transition: color 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.nav-bar p 
-{
+
+.nav-bar p {
     color: rgba(0, 0, 0, 0.8);
-    margin-right: 10%;
-    display: inline;
+    margin-right: 4%;
     text-align: center;
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: color 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.nav-bar p:hover
-{
+
+.nav-bar p:hover {
     color: rgba(0, 0, 0, 1);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
-.nav-bar span 
-{
-    width: 10%;
-    margin-right: 10px;
+
+.nav-bar span {
+    width: 128px;
+    margin-right: 12px;
     height: 100%;
     background-image: url(../images/logo.png);
-    background-attachment:local;
+    background-attachment: local;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    display: inline-block;
+    display: inline;
 }
-#user-avatar
-{
+
+#user-avatar {
     float: left;
     vertical-align: middle;
     width: 32px;
@@ -290,19 +383,20 @@ a
     background-color: rgba(255, 255, 255, 0.4);
     border-radius: 16px;
     background-image: url(../images/icon.png);
-    background-attachment:local;
+    background-attachment: local;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    transition: 0.333s cubic-bezier(0, 0, 0, 1);
+    transition-property: border background-color;
 }
-#user-avatar:hover
-{
+
+#user-avatar:hover {
     border: 1px solid rgba(0, 0, 0, 1);
     background-color: rgba(255, 255, 255, 1);
 }
-#default-user-avatar
-{
+
+#default-user-avatar {
     float: left;
     opacity: 0.4;
     vertical-align: middle;
@@ -314,73 +408,131 @@ a
     background-color: rgba(255, 255, 255, 0.6);
     border-radius: 16px;
     background-image: url(../images/default-avatar.png);
-    background-attachment:local;
+    background-attachment: local;
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
+
+@keyframes popInBottom {
+    from {
+        opacity: 0.8;
+        transform: translate3d(0, 100%, 0);
+    }
+
+    to {
+        opacity: 1;
+        transform: none;
+    }
+}
+
 /* 底部栏 */
-#footer-background
-{
+#footer-background {
+    /* animation-duration: 0.333s;
+    animation-fill-mode: both;
+    animation-name: popInBottom;
+    animation-timing-function: cubic-bezier(0, 0, 0, 1); */
+
     position: fixed;
     width: 100%;
     bottom: 0;
-    /* transform: translate(0, -100%); */
     z-index: 9999;
 
     background-color: rgba(255, 255, 255, 0.4);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
     border-radius: 0px;
 }
-.footer 
-{
+
+.footer {
     border-radius: inherit;
     text-shadow: rgb(255, 255, 255) 0 0 8px;
     color: rgba(143, 143, 143, 0.8);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
     color: rgba(0, 0, 0, 0.6);
     font-size: small;
     text-align: center;
     line-height: 40px;
 }
 
-
-summary 
+.acrylic-background:has( > details)
 {
-  list-style: none;
-  background: rgba(255, 255, 255, 0.2);
-  padding: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  outline: none;
-  text-align: center;
-  transition: all 0.333s cubic-bezier(0, 0, 0, 1);
-  text-shadow: rgb(255, 255, 255) 0 0 16px;
-  border-radius: inherit;
+    animation-duration: 0.333s;
+    animation-fill-mode: both;
+    animation-name: popInScale;
+    animation-timing-function: cubic-bezier(0, 0, 0, 1);
 }
-summary:hover
-{
-  text-decoration: none;
-  background-color: rgba(255, 255, 255, 0.5);
-  transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+
+summary {
+    list-style: none;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 5px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    outline: none;
+    text-align: center;
+    transition: background-color 0.333s cubic-bezier(0, 0, 0, 1);
+    text-shadow: rgb(255, 255, 255) 0 0 16px;
+    border-radius: inherit;
+}
+
+summary:hover {
+    text-decoration: none;
+    background-color: rgba(255, 255, 255, 0.5);
 }
 
 details {
-  box-sizing: border-box;
-  margin-top: 5px;
-  border-radius: inherit;
-  transition: all 0.333s cubic-bezier(0, 0, 0, 1);
+    box-sizing: border-box;
+    margin-top: 5px;
+    border-radius: inherit;
+    transition: box-shadow 0.333s cubic-bezier(0, 0, 0, 1);
 }
-details:hover
-{
+
+details:hover {
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.4);
-    transition: all 0.333s cubic-bezier(0, 0, 0, 1);
 }
+
 .inner-content {
-  border-top: none;
-  padding: 20px;
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  border-top: none;
-  text-shadow: rgb(255, 255, 255) 0 0 16px;
-  border-radius: inherit;
+    border-top: none;
+    padding: 20px;
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    border-top: none;
+    text-shadow: rgb(255, 255, 255) 0 0 16px;
+    border-radius: inherit;
+}
+
+.hover-underline {
+    position: relative;
+}
+
+.hover-underline:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: -6px;
+    left: 0;
+    border-radius: 1px;
+    background-color: rgba(0, 0, 0, 0.8);
+    opacity: 0.0;
+    transform: scaleX(0.05);
+}
+
+.hover-underline:hover:after {
+    opacity: 1.0;
+    transform: scaleX(0.75);
+    transition: 167ms cubic-bezier(0, 0, 0, 1);
+    transition-property: opacity transform;
+}
+
+.hover-underline:active:after {
+    opacity: 1.0;
+    transform: scaleX(1.05);
+    transition: 87ms cubic-bezier(0, 0, 0, 1);
+    transition-property: opacity transform;
+}
+
+.css-transitions-only-after-page-load * {
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+    transition: none !important;
 }

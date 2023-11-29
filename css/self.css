@@ -16,32 +16,23 @@ body
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
 }
 
-table {
+.inner-content table {
     width: 100%;
     border-collapse: collapse;
 }
 
-th, td 
+.inner-content th, td 
 {
     border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 8px;
     text-align: left;
 }
 
-th {
+.inner-content th {
     background-color: rgba(255, 255, 255, 0.6);
 }
 
-ul {
+.inner-content ul {
     list-style-type: none;
     padding: 0;
-}
-
-form {
-    max-width: 400px;
-}
-
-label {
-    display: block;
-    margin-bottom: 5px;
 }

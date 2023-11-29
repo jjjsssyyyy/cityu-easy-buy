@@ -7,12 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="Shortcut Icon" href="./images/icon.png">
     <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <style type="text/css">
-        @import url("./css/self.css");
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/self.css">
 </head>
 
-<body>
+<body class="css-transitions-only-after-page-load">
     <div class="acrylic-background" id="nav-bar-background">
         <div class="nav-bar">
             <h3 class="nav-bar-title">个人中心</h1>
@@ -20,127 +18,132 @@
                 <p>CtiyU@好物优选欢迎您</p>
                 <div class="search">
                     <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
-                    <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16"
-                        height="16">
+                    <div class="search-button-container">
+                        <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                    </div>
                 </div>
                 <ul>
                     <li>登录</li>
                     <li>注册</li>
                     <li>|</li>
                     <li>
-                        <a href="self.html">
+                        <a class="hover-underline" href="self.html">
                             <span id="user-avatar"></span>个人中心
                         </a>
                     </li>
                     <li>|</li>
-                    <li><a href="help.html">帮助中心</a></li>
+                    <li><a class="hover-underline" href="help.html">帮助中心</a></li>
                 </ul>
         </div>
     </div>
 
-    <div id="personal-info-container-background">
-        <a id="orders">
-            <div class="acrylic-background">
-                <details open>
-                    <summary>我的订单</summary>
-                    <div class="inner-content">
-                        <table>
-                            <tr>
-                                <th>订单号</th>
-                                <th>商品名称</th>
-                                <th>价格</th>
-                                <th>状态</th>
-                            </tr>
-                            <tr>
-                                <td>001</td>
-                                <td>23-24赛季巴塞罗那主场球衣<img
-                                        src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2FO1CN01h6u96l2Bs31MCtPgm_%21%214216998393-0-cib.jpg&refer=http%3A%2F%2Fcbu01.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703255022&t=8b9d4919772276b1dc84906a16f67b46"
-                                        width="80px" style="float: left;" /></td>
-                                <td>$599</td>
-                                <td>已发货</td>
-                            </tr>
-                            <tr>
-                                <td>002</td>
-                                <td>23-24赛季曼联主场球衣<img
-                                        src="https://www.sen31soccershop.com/media/catalog/product/cache/1/image/6edea67cb1d27d7f2b3bf6f60f79801f/m/a/manchester-united-home-jersey-23-24_a1084855-1.png"
-                                        width="80px" style="float: left;" /></td>
-                                <td>$899</td>
-                                <td>待发货</td>
-                            </tr>
-                            <tr>
-                                <td>003</td>
-                                <td>切尔西23-24赛季主场球衣<img
-                                        src="https://th.bing.com/th/id/OIP.-J4Z6DqybLGEpBw69JMTqwAAAA?pid=ImgDet&w=474&h=474&rs=1"
-                                        width="80px" style="float: left;" /></td>
-                                <td>$699</td>
-                                <td>待发货</td>
-                            </tr>
-                        </table>
-                    </div>
-                </details>
-            </div>
-        </a>
-        <a id="address">
-            <div class="acrylic-background">
-                <details open>
-                    <summary>收货地址</summary>
-                    <div class="inner-content">
-                        <ul>
-                            <li>收货地址1: 澳门城市大学氹仔校区 澳门特别行政区嘉模堂区半岛徐日升寅公马路</li>
-                            <li>收货地址2: 广成大厦 澳门特别行政区风顺堂区蓬莱新巷17-23号</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-        </a>
-        <a id="receiver-info">
-            <div class="acrylic-background">
-                <details open>
-                    <summary>收件人信息</summary>
-                    <div class="inner-content">
-                        <ul>
-                            <li>收件人姓名: huh?</li>
-                            <li>收件人联系方式1: +86 136xxxxxxxx</li>
-                            <li>收件人联系方式2: +853 689xxxxx</li>
-                        </ul>
-                    </div>
-                </details>
-            </div>
-        </a>
-        <a id="coupons">
-            <div class="acrylic-background">
-                <details open>
-                    <summary>我的优惠券</summary>
-                    <div class="inner-content">
-                        <table>
-                            <tr>
-                                <th>优惠券编号</th>
-                                <th>优惠券名称</th>
-                                <th>优惠值</th>
-                                <th>优惠券状态</th>
-                            </tr>
-                            <tr>
-                                <td>20231212001</td>
-                                <td>12.12 优惠券·1</td>
-                                <td>满1200减50</td>
-                                <td>将于 2023年12月31日 到期</td>
-                            </tr>
-                            <tr>
-                                <td><del>2023111103</del></td>
-                                <td><del>11.11 优惠券·3</del></td>
-                                <td><del>满114514减1919.81</del></td>
-                                <td><del>将于 2023年11月12日 到期</del><b style="color:red;">[已过期]</b></td>
-                            </tr>
-                        </table>
-                    </div>
-                </details>
-            </div>
-        </a>
+    <div class="content-container">
+        <div id="personal-info-container-background">
+            <a id="orders">
+                <div class="acrylic-background">
+                    <details open>
+                        <summary>我的订单</summary>
+                        <div class="inner-content">
+                            <table>
+                                <tr>
+                                    <th>订单号</th>
+                                    <th>商品名称</th>
+                                    <th>价格</th>
+                                    <th>状态</th>
+                                </tr>
+                                <tr>
+                                    <td>001</td>
+                                    <td>23-24赛季巴塞罗那主场球衣<img
+                                            src="https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fcbu01.alicdn.com%2Fimg%2Fibank%2FO1CN01h6u96l2Bs31MCtPgm_%21%214216998393-0-cib.jpg&refer=http%3A%2F%2Fcbu01.alicdn.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1703255022&t=8b9d4919772276b1dc84906a16f67b46"
+                                            width="80px" style="float: left;" /></td>
+                                    <td>$599</td>
+                                    <td>已发货</td>
+                                </tr>
+                                <tr>
+                                    <td>002</td>
+                                    <td>23-24赛季曼联主场球衣<img
+                                            src="https://www.sen31soccershop.com/media/catalog/product/cache/1/image/6edea67cb1d27d7f2b3bf6f60f79801f/m/a/manchester-united-home-jersey-23-24_a1084855-1.png"
+                                            width="80px" style="float: left;" /></td>
+                                    <td>$899</td>
+                                    <td>待发货</td>
+                                </tr>
+                                <tr>
+                                    <td>003</td>
+                                    <td>切尔西23-24赛季主场球衣<img
+                                            src="https://th.bing.com/th/id/OIP.-J4Z6DqybLGEpBw69JMTqwAAAA?pid=ImgDet&w=474&h=474&rs=1"
+                                            width="80px" style="float: left;" /></td>
+                                    <td>$699</td>
+                                    <td>待发货</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+                </div>
+            </a>
+            <a id="address">
+                <div class="acrylic-background">
+                    <details open>
+                        <summary>收货地址</summary>
+                        <div class="inner-content">
+                            <ul>
+                                <li>收货地址1: 澳门城市大学氹仔校区 澳门特别行政区嘉模堂区半岛徐日升寅公马路</li>
+                                <li>收货地址2: 广成大厦 澳门特别行政区风顺堂区蓬莱新巷17-23号</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </a>
+            <a id="receiver-info">
+                <div class="acrylic-background">
+                    <details open>
+                        <summary>收件人信息</summary>
+                        <div class="inner-content">
+                            <ul>
+                                <li>收件人姓名: huh?</li>
+                                <li>收件人联系方式1: +86 136xxxxxxxx</li>
+                                <li>收件人联系方式2: +853 689xxxxx</li>
+                            </ul>
+                        </div>
+                    </details>
+                </div>
+            </a>
+            <a id="coupons">
+                <div class="acrylic-background">
+                    <details open>
+                        <summary>我的优惠券</summary>
+                        <div class="inner-content">
+                            <table>
+                                <tr>
+                                    <th>优惠券编号</th>
+                                    <th>优惠券名称</th>
+                                    <th>优惠值</th>
+                                    <th>优惠券状态</th>
+                                </tr>
+                                <tr>
+                                    <td>20231212001</td>
+                                    <td>12.12 优惠券·1</td>
+                                    <td>满1200减50</td>
+                                    <td>将于 2023年12月31日 到期</td>
+                                </tr>
+                                <tr>
+                                    <td><del>2023111103</del></td>
+                                    <td><del>11.11 优惠券·3</del></td>
+                                    <td><del>满114514减1919.81</del></td>
+                                    <td><del>将于 2023年11月12日 到期</del><b style="color:red;">[已过期]</b></td>
+                                </tr>
+                            </table>
+                        </div>
+                    </details>
+                </div>
+            </a>
+        </div>
+
+
+        <div class="acrylic-background" id="footer-background">
+            <div class="footer">CtiyU@好物优选</div>
+        </div>
     </div>
 
-    <div class="acrylic-background" id="footer-background">
-        <div class="footer">CtiyU@好物优选</div>
-    </div>
 
     <script src="./js/L2Dwidget.min.js"></script>
     <script src="./js/common.js"></script>
@@ -155,6 +158,7 @@
             "mobile": { "show": true, "scale": 0.5 },
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
+        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
     </script>
 </body>
 

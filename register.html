@@ -7,12 +7,10 @@
     <title>注册界面</title>
     <link rel="Shortcut Icon" href="./images/icon.png">
     <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <style type="text/css">
-        @import url("./css/register.css");
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/register.css">
 </head>
 
-<body>
+<body class="css-transitions-only-after-page-load">
     <div class="acrylic-background" id="nav-bar-background">
         <div class="nav-bar">
             <h3 class="nav-bar-title">注册页面</h1>
@@ -20,19 +18,20 @@
                 <p>CtiyU@好物优选欢迎您</p>
                 <div class="search">
                     <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
-                    <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16"
-                        height="16">
+                    <div class="search-button-container">
+                        <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                    </div>
                 </div>
                 <ul>
-                    <li><a href="index.html">登录</a></li>
-                    <li><a href="register.html">注册</a></li>
+                    <li><a class="hover-underline" href="index.html">登录</a></li>
+                    <li><a class="hover-underline" href="register.html">注册</a></li>
                     <li>|</li>
                     <li>
                         <span id="default-user-avatar"></span>
                         个人中心
                     </li>
                     <li>|</li>
-                    <li><a href="help.html">帮助中心</a></li>
+                    <li><a class="hover-underline" href="help.html">帮助中心</a></li>
                 </ul>
         </div>
     </div>
@@ -88,6 +87,7 @@
             "mobile": { "show": true, "scale": 0.5 },
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
+        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
     </script>
 </body>
 

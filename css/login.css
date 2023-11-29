@@ -8,7 +8,6 @@ body
     text-align: right;
     display: inline-block;
     width: calc(100% - 24px - 29px);
-    transition: all 0.333s;
 }
 .no-account-tip
 {
@@ -20,7 +19,6 @@ body
     text-align: center;
     display: inline-block;
     width: 100%;
-    transition: all 0.333s;
 }
 .forget-password-tip
 {

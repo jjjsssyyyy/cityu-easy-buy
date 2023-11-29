@@ -7,12 +7,10 @@
     <title>详情页面</title>
     <link rel="Shortcut Icon" href="./images/icon.png">
     <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <style type="text/css">
-        @import url("./css/product.css");
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/product.css">
 </head>
 
-<body>
+<body class="css-transitions-only-after-page-load">
     <div class="acrylic-background" id="nav-bar-background">
         <div class="nav-bar">
             <h3 class="nav-bar-title">详情页面</h1>
@@ -20,101 +18,104 @@
                 <p>CtiyU@好物优选欢迎您</p>
                 <div class="search">
                     <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
-                    <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16"
-                        height="16">
+                    <div class="search-button-container">
+                        <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                    </div>
                 </div>
                 <ul>
                     <li>登录</li>
                     <li>注册</li>
                     <li>|</li>
                     <li>
-                        <a href="self.html">
+                        <a class="hover-underline" href="self.html">
                             <span id="user-avatar"></span>个人中心
                         </a>
                     </li>
                     <li>|</li>
-                    <li><a href="help.html">帮助中心</a></li>
+                    <li><a class="hover-underline" href="help.html">帮助中心</a></li>
                 </ul>
         </div>
     </div>
 
-    <!--内容区域-->
-    <div class="aero-background">
-        <div class="shop">
-            <div class="container">
-                <!--详情部分-->
-                <div class="concealor">
-                    <div>
-                        <p class="pname">CtiyU</p>
-                        <p class="pdetail">成功人士的不二之选</p>
-                    </div>
-                    <div class="content">
-                        <div class="left">
-                            <p>售价</p>
-                            <p>服务</p>
+    <div class="content-container">
+        <!--内容区域-->
+        <div class="aero-background">
+            <div class="shop">
+                <div class="container">
+                    <!--详情部分-->
+                    <div class="concealor">
+                        <div>
+                            <p class="pname">CtiyU</p>
+                            <p class="pdetail">成功人士的不二之选</p>
                         </div>
-                        <div class="right">
-                            <div>
-                                <p class="price">¥ 9.9</p>
-                                <p class="free">满9.9包邮</p>
+                        <div class="content">
+                            <div class="left">
+                                <p>售价</p>
+                                <p>服务</p>
                             </div>
-                            <div class="free">
-                                <p>支持7天无理由退货<br>
-                                    由城大优选发货并提供售后</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ac">
-                        <div class="area">
-                            <p>配送区域</p>
-                            <p>广东省 珠海市 香洲区 有货 <span>修改</span></p>
-                        </div>
-                        <div class="scolor">
-                            <p>选择类别</p>
-                            <div><span>数据科学学院</span></div>
-                            <div><span>商学院</span></div>
-                            <div><span>金融学院</span></div>
-                        </div>
-                        <div class="number">
-                            <p>数量</p>
-                            <div class="box">
-                                <div class="box1"></div>
-                                <input type="number" value="1" min="0">
-                                <div class="box2"></div>
+                            <div class="right">
+                                <div>
+                                    <p class="price">¥ 9.9</p>
+                                    <p class="free">满9.9包邮</p>
+                                </div>
+                                <div class="free">
+                                    <p>支持7天无理由退货<br>
+                                        由城大优选发货并提供售后</p>
+                                </div>
                             </div>
                         </div>
-                    </div>
+                        <div class="ac">
+                            <div class="area">
+                                <p>配送区域</p>
+                                <p>广东省 珠海市 香洲区 有货 <span>修改</span></p>
+                            </div>
+                            <div class="scolor">
+                                <p>选择类别</p>
+                                <div><span>数据科学学院</span></div>
+                                <div><span>商学院</span></div>
+                                <div><span>金融学院</span></div>
+                            </div>
+                            <div class="number">
+                                <p>数量</p>
+                                <div class="box">
+                                    <div class="box1"></div>
+                                    <input type="number" value="1" min="0">
+                                    <div class="box2"></div>
+                                </div>
+                            </div>
+                        </div>
 
-                    <!--购买-->
-                    <div class="btn">
-                        <div class="add"><a href="javascript:alert('加入成功')">加入购物车</a></div>
-                        <div class="buy"><a href="javascript:alert('购买成功')">立即购买</a></div>
-                        <div class="fav">
-                            <img src="http://nocturne.bczcdn.com/file/1655360326007_90528/Vector.png" width="20"><br>
-                            <span>收藏</span>
-                        </div>
-                        <div class="fav">
-                            <img src="http://nocturne.bczcdn.com/file/1655359646000_40688/headset.svg" width="20"><br>
-                            <span>客服</span>
+                        <!--购买-->
+                        <div class="btn">
+                            <div class="add"><a href="javascript:alert('加入成功')">加入购物车</a></div>
+                            <div class="buy"><a href="javascript:alert('购买成功')">立即购买</a></div>
+                            <div class="fav">
+                                <img src="http://nocturne.bczcdn.com/file/1655360326007_90528/Vector.png"
+                                    width="20"><br>
+                                <span>收藏</span>
+                            </div>
+                            <div class="fav">
+                                <img src="http://nocturne.bczcdn.com/file/1655359646000_40688/headset.svg"
+                                    width="20"><br>
+                                <span>客服</span>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <!--评价-->
-            <div>
-                <div class="botop">
-                    <div class="intr"><span>商品介绍</span></div>
-                    <div class="middle"><span>商品评价(0)</span></div>
-                    <div class="intr"><span>规格与包装</span></div>
+                <!--评价-->
+                <div>
+                    <div class="botop">
+                        <div class="intr"><span>商品介绍</span></div>
+                        <div class="middle"><span>商品评价(0)</span></div>
+                        <div class="intr"><span>规格与包装</span></div>
+                    </div>
+                    <div class="bobottom">
+                        <p>居然还没有评论~</p>
+                    </div>
                 </div>
-                <div class="bobottom">
-                    <p>居然还没有评论~</p>
+
                 </div>
-            </div>
-
-            <div style="height: 40px; width:100%">
-
             </div>
         </div>
     </div>
@@ -133,6 +134,7 @@
             "mobile": { "show": true, "scale": 0.5 },
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
+        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
     </script>
 </body>
 

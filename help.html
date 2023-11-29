@@ -5,12 +5,10 @@
     <meta charset="UTF-8">
     <link rel="Shortcut Icon" href="./images/icon.png">
     <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <style type="text/css">
-        @import url("./css/help.css");
-    </style>
+    <link rel="stylesheet" type="text/css" href="./css/help.css">
 </head>
 
-<body>
+<body class="css-transitions-only-after-page-load">
     <div class="acrylic-background" id="nav-bar-background">
         <div class="nav-bar">
             <h3 class="nav-bar-title">帮助中心</h1>
@@ -18,12 +16,13 @@
                 <p>CtiyU@好物优选欢迎您</p>
                 <div class="search">
                     <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
-                    <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16"
-                        height="16">
+                    <div class="search-button-container">
+                        <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                    </div>
                 </div>
                 <ul>
-                    <li><a href="index.html">登录</a></li>
-                    <li><a href="register.html">注册</a></li>
+                    <li><a class="hover-underline" href="index.html">登录</a></li>
+                    <li><a class="hover-underline" href="register.html">注册</a></li>
                     <li>|</li>
                     <li>
                         <span id="default-user-avatar"></span>
@@ -35,51 +34,53 @@
         </div>
     </div>
 
-    <div id="help-container-background">
-        <a id="orders">
-            <div class="acrylic-background">
-                <details>
-                    <summary>订单</summary>
-                    <div class="inner-content">
-                        <p>这里提供关于下订单、修改订单和取消订单的常见问题解答。</p>
-                    </div>
-                </details>
-            </div>
-        </a>
-        <a id="shipping">
-            <div class="acrylic-background">
-                <details>
-                    <summary>配送</summary>
-                    <div class="inner-content">
-                        <p>这里提供关于配送时间、送货方式和物流跟踪的常见问题解答。</p>
-                    </div>
-                </details>
-            </div>
-        </a>
-        <a id="payments">
-            <div class="acrylic-background">
-                <details>
-                    <summary>支付</summary>
-                    <div class="inner-content">
-                        <p>这里提供关于支付方式、退款和账户安全的常见问题解答。</p>
-                    </div>
-                </details>
-            </div>
-        </a>
-        <a id="returns">
-            <div class="acrylic-background">
-                <details>
-                    <summary>退货</summary>
-                    <div class="inner-content">
-                        <p>这里提供关于退货政策、退款流程和退货标准的常见问题解答。</p>
-                    </div>
-                </details>
-            </div>
-        </a>
-    </div>
-
-    <div class="acrylic-background" id="footer-background">
-        <div class="footer">CtiyU@好物优选</div>
+    <div class="content-container">
+        <div id="help-container-background">
+            <a id="orders">
+                <div class="acrylic-background">
+                    <details>
+                        <summary>订单</summary>
+                        <div class="inner-content">
+                            <p>这里提供关于下订单、修改订单和取消订单的常见问题解答。</p>
+                        </div>
+                    </details>
+                </div>
+            </a>
+            <a id="shipping">
+                <div class="acrylic-background">
+                    <details>
+                        <summary>配送</summary>
+                        <div class="inner-content">
+                            <p>这里提供关于配送时间、送货方式和物流跟踪的常见问题解答。</p>
+                        </div>
+                    </details>
+                </div>
+            </a>
+            <a id="payments">
+                <div class="acrylic-background">
+                    <details>
+                        <summary>支付</summary>
+                        <div class="inner-content">
+                            <p>这里提供关于支付方式、退款和账户安全的常见问题解答。</p>
+                        </div>
+                    </details>
+                </div>
+            </a>
+            <a id="returns">
+                <div class="acrylic-background">
+                    <details>
+                        <summary>退货</summary>
+                        <div class="inner-content">
+                            <p>这里提供关于退货政策、退款流程和退货标准的常见问题解答。</p>
+                        </div>
+                    </details>
+                </div>
+            </a>
+        </div>
+    
+        <div class="acrylic-background" id="footer-background">
+            <div class="footer">CtiyU@好物优选</div>
+        </div>
     </div>
 
     <script src="./js/L2Dwidget.min.js"></script>
@@ -95,6 +96,7 @@
             "mobile": { "show": true, "scale": 0.5 },
             "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
         });
+        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
     </script>
 </body>
 
