@@ -5,9 +5,9 @@
     <title>个人中心</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="Shortcut Icon" href="./images/icon.png">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/self.css">
+    <link rel="Shortcut Icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/self.css">
 </head>
 
 <body class="css-transitions-only-after-page-load">
@@ -16,7 +16,7 @@
             <h3 class="nav-bar-title">个人中心</h1>
                 <span></span>
                 <p>CtiyU@好物优选欢迎您</p>
-                <div class="search">
+                <div class="search" id="search">
                     <input class="search-box" id="search-box" type="text" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
                         <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
@@ -41,7 +41,7 @@
         <div id="personal-info-container-background">
             <a id="orders">
                 <div class="acrylic-background">
-                    <details open>
+                    <details open id="orders-details">
                         <summary>我的订单</summary>
                         <div class="inner-content">
                             <table>
@@ -109,7 +109,7 @@
             </a>
             <a id="coupons">
                 <div class="acrylic-background">
-                    <details open>
+                    <details open id="coupons-details">
                         <summary>我的优惠券</summary>
                         <div class="inner-content">
                             <table>
@@ -145,46 +145,10 @@
     </div>
 
 
-    <script src="./js/L2Dwidget.min.js"></script>
-    <script src="./js/common.js"></script>
+    <script src="js/L2Dwidget.min.js"></script>
     <!--https://css-tricks.com/how-to-animate-the-details-element-using-waapi/-->
-    <script>
-        function doSearch()
-        {
-            var searchText = document.getElementById('search-box').value;
-
-            if (searchText == "CityU")
-            {
-                window.location.href = "product.html";
-            }
-            else
-            {
-                alert("没找到对应的好物喵~");
-            }
-        }
-        document.getElementById('search-button').addEventListener('click', function (event) {
-            doSearch();
-        });
-        document.getElementById('search-box').addEventListener('keydown', function (event) {
-            if (window.event) {
-                event_e = window.event;
-            }
-            var keycode = event_e.charCode || event_e.keyCode;
-            if(keycode == '13') {
-                doSearch();
-            }
-        });
-        document.querySelectorAll('details').forEach((el) => {
-            new Accordion(el);
-        });
-        L2Dwidget.init({
-            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
-            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
-            "mobile": { "show": true, "scale": 0.5 },
-            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
-        });
-        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
-    </script>
+    <script src="js/details-animation.js"></script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>

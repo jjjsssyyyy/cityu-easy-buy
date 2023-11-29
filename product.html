@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>详情页面</title>
-    <link rel="Shortcut Icon" href="./images/icon.png">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/product.css">
+    <link rel="Shortcut Icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/product.css">
 </head>
 
 <body class="css-transitions-only-after-page-load">
@@ -16,7 +16,7 @@
             <h3 class="nav-bar-title">详情页面</h1>
                 <span></span>
                 <p>CtiyU@好物优选欢迎您</p>
-                <div class="search">
+                <div class="search" id="search">
                     <input class="search-box" id="search-box" type="text" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
                         <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
@@ -126,54 +126,11 @@
     </div>
 
 
-    <script src="./js/L2Dwidget.min.js"></script>
-    <script>
-        function doSearch()
-        {
-            var searchText = document.getElementById('search-box').value;
-
-            if (searchText == "CityU")
-            {
-                window.location.href = "product.html";
-            }
-            else
-            {
-                alert("没找到对应的好物喵~");
-            }
-        }
-        document.getElementById('search-button').addEventListener('click', function (event) {
-            doSearch();
-        });
-        document.getElementById('search-box').addEventListener('keydown', function (event) {
-            if (window.event) {
-                event_e = window.event;
-            }
-            var keycode = event_e.charCode || event_e.keyCode;
-            if(keycode == '13') {
-                doSearch();
-            }
-        });
-        L2Dwidget.init({
-            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
-            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
-            "mobile": { "show": true, "scale": 0.5 },
-            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
-        });
-        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
-        document.addEventListener('DOMContentLoaded', function () {
-        var numberInput = document.querySelector('input[type="number"]');
-        var box1 = document.querySelector('.box1');
-        var box2 = document.querySelector('.box2');
-
-        box1.addEventListener('click', function() {
-          numberInput.value = parseInt(numberInput.value) - 1;
-        });
-
-        box2.addEventListener('click', function() {
-          numberInput.value = parseInt(numberInput.value) + 1;
-        });
-      });
-    </script>
+    <script src="js/L2Dwidget.min.js"></script>
+    <!--https://css-tricks.com/how-to-animate-the-details-element-using-waapi/-->
+    <script src="js/details-animation.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/product.js"></script>
 </body>
 
 </html>

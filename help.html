@@ -3,33 +3,35 @@
 <head>
     <title>帮助中心</title>
     <meta charset="UTF-8">
-    <link rel="Shortcut Icon" href="./images/icon.png">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/help.css">
+    <link rel="Shortcut Icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/help.css">
 </head>
 
 <body class="css-transitions-only-after-page-load">
     <div class="acrylic-background" id="nav-bar-background">
         <div class="nav-bar">
-            <h3 class="nav-bar-title">帮助中心</h1>
+            <h3 class="nav-bar-title">个人中心</h1>
                 <span></span>
                 <p>CtiyU@好物优选欢迎您</p>
-                <div class="search">
+                <div class="search" id="search">
                     <input class="search-box" id="search-box" type="text" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
-                        <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                        <input class="search-button" id="search-button" type="image" src="images/search.png"
+                            alt="search-button" width="16" height="16">
                     </div>
                 </div>
                 <ul>
-                    <li><a class="hover-underline" href="index.html">登录</a></li>
-                    <li><a class="hover-underline" href="register.html">注册</a></li>
+                    <li>登录</li>
+                    <li>注册</li>
                     <li>|</li>
                     <li>
-                        <span id="default-user-avatar"></span>
-                        个人中心
+                        <a class="hover-underline" href="self.html">
+                            <span id="user-avatar"></span>个人中心
+                        </a>
                     </li>
                     <li>|</li>
-                    <li>帮助中心</li>
+                    <li><a class="hover-underline" href="help.html">帮助中心</a></li>
                 </ul>
         </div>
     </div>
@@ -38,91 +40,227 @@
         <div id="help-container-background">
             <a id="orders">
                 <div class="acrylic-background">
-                    <details>
+                    <details open id="orders-details">
                         <summary>订单</summary>
                         <div class="inner-content">
                             <p>这里提供关于下订单、修改订单和取消订单的常见问题解答。</p>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 如何恢复删除的订单？</summary>
+                                <div class="inner-content">
+                                    A: 目前还不支持这个操作喵~<br>
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 无法下单，报错提示【购买失败，同一时间下单人数过多】？</summary>
+                                <div class="inner-content">
+                                    A: 亲爱的同学您好，如果您遇到无法下单或者下单人数过多的问题，有可能是您的商品选购火爆或是网络问题哦，难以您更换商品再尝试购买，给您带来不便非常抱歉喵~！<br>
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 订单自动取消怎么回事？</summary>
+                                <div class="inner-content">
+                                    A: <br>
+                                    亲爱的同学，感谢您对CityU好物优选的支持！
+                                    <br>
+                                    <br>
+                                    1. 如您拍下订单之后被卖家关闭，这种情况一般是卖家因为自身原因选择取消交易，如果您实在想要购买该商品，建议您和卖家协商处理，或者您也可以去别的店铺购买类似商品。
+                                    <br>
+                                    2. 如果您是在购买虚拟商品（包括游戏币充值等）时被取消订单，是因为系统判断当前订单存在被欺诈风险，为了保障您的钱款安全，暂时关闭了您的订单。
+                                    <br>
+                                    <br>
+                                    如您确认本人购买，建议您联系海外热线客服核实处理，非常抱歉给您造成的不便喵~
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </div>
             </a>
             <a id="shipping">
                 <div class="acrylic-background">
-                    <details>
+                    <details open>
                         <summary>配送</summary>
                         <div class="inner-content">
                             <p>这里提供关于配送时间、送货方式和物流跟踪的常见问题解答。</p>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 如何查看订单的物流信息？</summary>
+                                <div class="inner-content">
+                                    A: 同学，您可以登录CityU好物优选，点击【已买到的宝贝】，找到您需要查询的订单，点击【查看物流】就可以看到您包裹的详细物流信息了喵。
+                                    <br>
+                                    <b style="color: red;">温馨提示：</b>
+                                    <br>
+                                    若您选择的为官方集运/直送服务，物流状态显示已被仓库签收，说明您的包裹已被转运商已签收了，海外段的物流信息若未显示，您可以联系对应的转运商确认喵~
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 在CityU好物优选上买东西可以寄到海外及港澳台地区吗？</summary>
+                                <div class="inner-content">
+                                    A: 废话，当然没问题，不然你买什么喵~<br>
+                                    您可以选择CityU好物优选集运/直送进行运送海外及港澳台地区（目前提供ityU好物优选集送服务的地区是：港澳、台湾、日本、马来新亚、新加坡、美国、加拿大、澳洲、新西兰）
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 使用CityU好物优选集运/直送没有收到商品，不小心点击确认收货了怎么办？</summary>
+                                <div class="inner-content">
+                                    A: 那你自己倒霉喵~<br>
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </div>
             </a>
             <a id="payments">
                 <div class="acrylic-background">
-                    <details>
+                    <details open>
                         <summary>支付</summary>
                         <div class="inner-content">
-                            <p>这里提供关于支付方式、退款和账户安全的常见问题解答。</p>
+                            <p>这里提供关于支付方式、账户安全的常见问题解答。</p>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 支付手续费有多少？</summary>
+                                <div class="inner-content">
+                                    A:
+                                    <ul>
+                                        <li>国际信用卡（VISA/master/JCB) ：收取3%的服务费</li>
+                                        <li>支付宝HK: 无服务费</li>
+                                        <li>马来西亚网银（online banking）：收取1.5%的服务费</li>
+                                        <li>Lazada Wallet ：余额支付收取1%服务费，银行卡支付收取1.5%服务费</li>
+                                        <li>台湾超商缴费：下单时支付1%的服务费，便利店另外收取15台币服务费</li>
+                                        <li>台湾转账付款（ATM）：收取1% 服务费 ，若跨行转账所产生的【银行转账手续费】需用户自行负担</li>
+                                    </ul>
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 支持多少种支付方式？</summary>
+                                <div class="inner-content">
+                                    A:
+                                    <ol>
+                                        <li>credit card（包括visa、master、JCB）</li>
+                                        <li>支付宝购物卡</li>
+                                        <li>大陆银行卡</li>
+                                        <li>支付宝账户余额</li>
+                                    </ol>
+                                    <b style="color: red;">温馨提示：</b>
+                                    <br>
+                                    <ol>
+                                        <li>无线端上支持的付款方式：信用卡、支付宝余额或者大陆银行卡</li>
+                                        <li>如您订单是购买虚拟商品或享受了红包或者是优惠券的优惠，仅支持您使用支付宝购物卡、支付宝余额或者大陆银行卡进行付款</li>
+                                        <li>结算时以人民币结算，系统会自动根据实时汇率进行计算</li>
+                                    </ol>
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 支付时遇到“当前扣款不成功”报错怎么办？</summary>
+                                <div class="inner-content">
+                                    A: 支付时遇到“当前扣款不成功报错”，可能是以下原因导致的。
+                                    <ol>
+                                        <li>订单笔数超过15笔，如您需要享受支付优惠，建议您减少支付笔数至10笔以下哦。</li>
+                                        <li>请确认您的订单中是否有0元订单，如有，建议您去掉哦。</li>
+                                        <li>可能您的订单中有部分商品不支持海外支付方式，建议您可以选择单笔尝试支付。</li>
+                                    </ol>
+                                    非常抱歉给您带来的不便喵~
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </div>
             </a>
             <a id="returns">
                 <div class="acrylic-background">
-                    <details>
+                    <details open id="returns-details">
                         <summary>退货</summary>
                         <div class="inner-content">
                             <p>这里提供关于退货政策、退款流程和退货标准的常见问题解答。</p>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 收到商品有质量问题，怎么办？</summary>
+                                <div class="inner-content">
+                                    A: 如果您所购买的商品存在问题，如卖家发错货、描述不符、品质有问题等，请您参考以下解决方案：
+                                    <br>
+                                    <ol>
+                                        <li>
+                                            如果交易还在售后期内（交易成功的15天内），请您及时联系卖家协商换货或退货处理哦。
+                                            <p>
+                                                若因邮费或退货退款等问题无法协商一致，建议您在交易成功前及时针对订单发起退款申请，在卖家拒绝申请后及时申请“客服介入”，并上传有效凭证（如实物对比图片、质量检测凭证等），后续将会有CityU好物优选客服介入协助
+                                                您处理。发起退款或申请介入后请您及时关注处理进度哦。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            如果超过交易成功后的15天，建议您优先联系卖家协商处理，若无法协商一致，您可以联系CityU好物优选客服协助处理。
+                                            <p>
+                                                退款发起路径：进入【个人中心】-【我的订单】找到对应订单，点击商品图片栏进入订单详情页面，点击【退款】或【申请售后】；并上传相关凭证（如实物对比图片、阿里旺旺聊天记录截图，退货物流底单，质量检测
+                                                凭证等）。如果后续卖家拒绝您的退款申请，建议您及时申请CityU好物优选客服介入协助您处理喵~
+                                            </p>
+                                        </li>
+                                    </ol>
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 如何查看退款、售后详情？</summary>
+                                <div class="inner-content">
+                                    A:
+                                    如您已经提交退款/售后申请，需要查看退款处理进度，请登录【个人中心】-【退款管理】页面，页面跳转之后，在【我申请的退款】里找到这笔退款订单，您可以查看到您的退款状态。
+                                </div>
+                            </details>
+                            <details class="question-content">
+                                <summary class="question-title">Q: 如何申请退货退款？</summary>
+                                <div class="inner-content">
+                                    A:<br>
+                                    如果您在与卖家交易过程中，遇到问题需要退款，可以根据订单状态按以下方式操作呢喵：
+                                    <ol>
+                                        <li>
+                                            若订单显示为【等待买家付款】
+                                            <p>
+                                                您只是拍下了商品，还没有成功进行【付款】操作呢，您可以与卖家协商后自己【取消订单】或让卖家关闭交易，或者等系统超时自动关闭交易。 
+                                            </p>
+                                        </li>
+                                        <li>
+                                            若订单显示为【买家已付款】
+                                            <p>
+                                                您可以与卖家协商后登录【个人中心】-【已买到的宝贝】页面找到该笔订单，点击【退款/退货】-【仅退款】。若联系不上卖家或卖家一直未处理退款，在买家申请退款的48小时后，系统会自动退款给您。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            若订单显示为【卖家已发货】
+                                            <p>
+                                                如果您和卖家已经协商需部分/全部退款，您可以登录【个人中心】-【已买到的宝贝】页面找到该笔订单，点击【退款/退货】，选择服务类型和退款原因。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            若订单显示为【交易成功】
+                                            <p>
+                                                您可以在交易确认收货的15天以内，登录【个人中心】-【已买到的宝贝】页面找到该笔订单，点击【申请售后】。
+                                            </p>
+                                        </li>
+                                        <li>
+                                            若订单显示为【交易关闭】
+                                            <p>
+                                                此交易状态表示交易已经结束，是无法申请退款的呢（交易关闭可能是由于您拍下了商品但未付款，后续由卖家或者系统关闭了交易；或是您已经申请退款成功，钱款已经退回，交易关闭）
+                                            </p>
+                                        </li>
+                                    </ol>
+                                    <b style="color: red;">温馨提示：</b>
+                                    <br>
+                                    <ol>
+                                        <li>如您已经过了维权处理期无法发起退款申请，建议您联系卖家协商处理哦。如无法协商一致，建议您提供有效凭证，联系CityU好物优选客服处理。</li>
+                                        <li>如果您确实操作过付款，但交易订单状态一直未改变，请确认您支付所用的银行卡是否已经扣款，或相关款项是否充值到对应的支付宝账户中，如关于钱款仍有问题请直接联系支付宝客服咨询。</li>
+                                        <li>如果您在退款过程中卖家操作了拒绝，且双方无法协商一致，您可以点击【申请客服介入】处理。</li>
+                                    </ol>
+                                    若您选择的为官方集运/直送服务，物流状态显示已被仓库签收，说明您的包裹已被转运商已签收了，海外段的物流信息若未显示，您可以联系对应的转运商确认喵~
+                                </div>
+                            </details>
                         </div>
                     </details>
                 </div>
             </a>
         </div>
-    
+
         <div class="acrylic-background" id="footer-background">
             <div class="footer">CtiyU@好物优选</div>
         </div>
     </div>
 
-    <script src="./js/L2Dwidget.min.js"></script>
-    <script src="./js/common.js"></script>
+    <script src="js/L2Dwidget.min.js"></script>
     <!--https://css-tricks.com/how-to-animate-the-details-element-using-waapi/-->
-    <script>
-        function doSearch()
-        {
-            var searchText = document.getElementById('search-box').value;
-
-            if (searchText == "CityU")
-            {
-                window.location.href = "product.html";
-            }
-            else
-            {
-                alert("没找到对应的好物喵~");
-            }
-        }
-        document.getElementById('search-button').addEventListener('click', function (event) {
-            doSearch();
-        });
-        document.getElementById('search-box').addEventListener('keydown', function (event) {
-            if (window.event) {
-                event_e = window.event;
-            }
-            var keycode = event_e.charCode || event_e.keyCode;
-            if(keycode == '13') {
-                doSearch();
-            }
-        });
-        document.querySelectorAll('details').forEach((el) => {
-            new Accordion(el);
-        });
-        L2Dwidget.init({
-            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
-            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
-            "mobile": { "show": true, "scale": 0.5 },
-            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
-        });
-        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
-    </script>
+    <script src="js/details-animation.js"></script>
+    <script src="js/common.js"></script>
 </body>
 
 </html>

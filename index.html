@@ -4,9 +4,9 @@
 <head>
     <title>用户登录</title>
     <meta charset="UTF-8">
-    <link rel="Shortcut Icon" href="./images/icon.png">
-    <link rel="stylesheet" type="text/css" href="./css/common.css">
-    <link rel="stylesheet" type="text/css" href="./css/login.css">
+    <link rel="Shortcut Icon" href="images/icon.png">
+    <link rel="stylesheet" type="text/css" href="css/common.css">
+    <link rel="stylesheet" type="text/css" href="css/login.css">
 </head>
 
 <body class="css-transitions-only-after-page-load">
@@ -15,7 +15,7 @@
             <h3 class="nav-bar-title">登录页面</h1>
                 <span></span>
                 <p>CtiyU@好物优选欢迎您</p>
-                <div class="search">
+                <div class="search" id="search">
                     <input class="search-box" id="search-box" type="text" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
                         <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
@@ -41,20 +41,19 @@
                     <h2>登录</h2>
                     <span class="no-account-tip">
                         没有账号?
-                        <a href="./register.html" target="_self">点此注册</a>
+                        <a href="register.html" target="_self">点此注册</a>
                     </span>
                 </span>
                 <form id="loginForm">
                     <div class="dialog-group">
                         <label for="username">用户名:</label>
-                        <input type="text" id="username" name="username">
+                        <input type="text" id="username" name="username" required>
                     </div>
                     <div class="dialog-group">
                         <label for="password">密码:</label>
-                        <input type="password" id="password" name="password">
+                        <input type="password" id="password" name="password" required>
                     </div>
-                    <button type="submit" class="action-button"
-                        onClick="window.location.href='product.html'">登录</button>
+                    <button type="submit" class="action-button">登录</button>
                     <span class="forget-password-tip">
                         <a href="javascript:alert('抱歉，目前还不支持此操作喵!')">已有帐号，忘记密码?</a>
                     </span>
@@ -68,54 +67,11 @@
         <div class="footer">CtiyU@好物优选</div>
     </div>
 
-    <script src="./js/L2Dwidget.min.js"></script>
-    <script>
-        function doSearch()
-        {
-            var searchText = document.getElementById('search-box').value;
-
-            if (searchText == "CityU")
-            {
-                window.location.href = "product.html";
-            }
-            else
-            {
-                alert("没找到对应的好物喵~");
-            }
-        }
-        document.getElementById('search-button').addEventListener('click', function (event) {
-            doSearch();
-        });
-        document.getElementById('search-box').addEventListener('keydown', function (event) {
-            if (window.event) {
-                event_e = window.event;
-            }
-            var keycode = event_e.charCode || event_e.keyCode;
-            if(keycode == '13') {
-                doSearch();
-            }
-        });
-        document.getElementById('loginForm').addEventListener('submit', function (event) {
-            var username = document.getElementById('username').value;
-            var password = document.getElementById('password').value;
-
-            if (username !== "Huh?" || password !== "114514") {
-                alert('用户名称或密码错误喵!');
-                event.preventDefault(); // 阻止表单提交
-            }
-            else
-            {
-                window.location.href = "product.html";
-            }
-        });
-        L2Dwidget.init({
-            "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
-            "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },
-            "mobile": { "show": true, "scale": 0.5 },
-            "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 }
-        });
-        setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load") },  500);
-    </script>
+    <script src="js/L2Dwidget.min.js"></script>
+    <!--https://css-tricks.com/how-to-animate-the-details-element-using-waapi/-->
+    <script src="js/details-animation.js"></script>
+    <script src="js/common.js"></script>
+    <script src="js/login.js"></script>
 </body>
 
 </html>

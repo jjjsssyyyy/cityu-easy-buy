@@ -3,20 +3,44 @@ body
   background-image:url(../images/help-background.jpg)
 }
 
+#orders, #orders-details
+{
+  -webkit-border-top-left-radius: 8px;     /* 左上角 */
+  -webkit-border-top-right-radius: 8px;    /* 右上角 */
+  border-top-left-radius: 8px;     /* 左上角 */
+  border-top-right-radius: 8px;    /* 右上角 */ 
+}
+
+#returns, #returns-details
+{
+  -webkit-border-bottom-left-radius: 8px;     /* 左下角 */
+  -webkit-border-bottom-right-radius: 8px;    /* 右下角 */
+  border-bottom-left-radius: 8px;     /* 左下角 */
+  border-bottom-right-radius: 8px;    /* 右下角 */ 
+}
+
 #help-container-background
 {
   margin: auto;
   border-radius: 0px;
-  margin-top: 24px;
+  margin: 24px auto;
   width: 60%;
+}
+
+.question-title
+{
+  text-align: left;
+}
+.question-content
+{
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.question-content:hover
+{
+  box-shadow: 0 0 24px rgba(0, 0, 0, 0.1);
 }
 
 .acrylic-background
 {
   box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
-}
-
-#help-container-background a
-{
-  font-size:large;
 }
