@@ -17,9 +17,9 @@
                 <span></span>
                 <p>CtiyU@好物优选欢迎您</p>
                 <div class="search">
-                    <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
+                    <input class="search-box" id="search-box" type="text" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
-                        <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                        <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
                     </div>
                 </div>
                 <ul>
@@ -87,8 +87,8 @@
 
                         <!--购买-->
                         <div class="btn">
-                            <div class="add"><a href="javascript:alert('加入成功')">加入购物车</a></div>
-                            <div class="buy"><a href="javascript:alert('购买成功')">立即购买</a></div>
+                            <div class="add"><a href="javascript:alert('加入成功喵~')">加入购物车</a></div>
+                            <div class="buy"><a href="javascript:alert('购买成功喵~')">立即购买</a></div>
                             <div class="fav">
                                 <img src="http://nocturne.bczcdn.com/file/1655360326007_90528/Vector.png"
                                     width="20"><br>
@@ -128,6 +128,31 @@
 
     <script src="./js/L2Dwidget.min.js"></script>
     <script>
+        function doSearch()
+        {
+            var searchText = document.getElementById('search-box').value;
+
+            if (searchText == "CityU")
+            {
+                window.location.href = "product.html";
+            }
+            else
+            {
+                alert("没找到对应的好物喵~");
+            }
+        }
+        document.getElementById('search-button').addEventListener('click', function (event) {
+            doSearch();
+        });
+        document.getElementById('search-box').addEventListener('keydown', function (event) {
+            if (window.event) {
+                event_e = window.event;
+            }
+            var keycode = event_e.charCode || event_e.keyCode;
+            if(keycode == '13') {
+                doSearch();
+            }
+        });
         L2Dwidget.init({
             "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
             "display": { "position": "left", "width": 150, "height": 300, "hOffset": 0, "vOffset": 0 },

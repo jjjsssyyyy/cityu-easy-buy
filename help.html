@@ -15,9 +15,9 @@
                 <span></span>
                 <p>CtiyU@好物优选欢迎您</p>
                 <div class="search">
-                    <input class="search-box" type="text" placeholder="搜索您想要的好物" name="search">
+                    <input class="search-box" id="search-box" type="text" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
-                        <input class="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                        <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
                     </div>
                 </div>
                 <ul>
@@ -87,6 +87,31 @@
     <script src="./js/common.js"></script>
     <!--https://css-tricks.com/how-to-animate-the-details-element-using-waapi/-->
     <script>
+        function doSearch()
+        {
+            var searchText = document.getElementById('search-box').value;
+
+            if (searchText == "CityU")
+            {
+                window.location.href = "product.html";
+            }
+            else
+            {
+                alert("没找到对应的好物喵~");
+            }
+        }
+        document.getElementById('search-button').addEventListener('click', function (event) {
+            doSearch();
+        });
+        document.getElementById('search-box').addEventListener('keydown', function (event) {
+            if (window.event) {
+                event_e = window.event;
+            }
+            var keycode = event_e.charCode || event_e.keyCode;
+            if(keycode == '13') {
+                doSearch();
+            }
+        });
         document.querySelectorAll('details').forEach((el) => {
             new Accordion(el);
         });
