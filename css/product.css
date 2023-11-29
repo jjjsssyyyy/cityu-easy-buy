@@ -166,7 +166,10 @@ input[type="number"] {
     border-radius: 4px;
     outline: none;
 }
-
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    -webkit-appearance: none;
+    margin: 0;}
 /*加号横线*/
 .box2::before {
     content: "";
