@@ -19,7 +19,8 @@
                 <div class="search" id="search">
                     <input class="search-box" id="search-box" type="search" placeholder="搜搜您想要的好物喵~" name="search">
                     <div class="search-button-container">
-                        <input class="search-button" id="search-button" type="image" src="images/search.png" alt="search-button" width="16" height="16">
+                        <input class="search-button" id="search-button" type="image" src="images/search.png"
+                            alt="search-button" width="16" height="16">
                     </div>
                 </div>
                 <ul>
@@ -87,13 +88,17 @@
 
                         <!--购买-->
                         <div class="button-group">
-                            <button type="submit" class="button" id="add-to-cart" onclick="javascript:catAlert('加入成功了喵~', 5000)">加入购物车</button>
-                            <button type="submit" class="button" id="buy-now" onclick="javascript:catAlert('购买成功了喵~', 5000)">立即购买</button>
-                            <button type="submit" class="button image-button" id="collect" onclick="javascript:catAlert('收藏成功了喵~', 5000)">
+                            <button type="submit" class="button" id="add-to-cart"
+                                onclick="javascript:catAlert('加入成功了喵~', 5000)">加入购物车</button>
+                            <button type="submit" class="button" id="buy-now"
+                                onclick="javascript:catAlert('购买成功了喵~', 5000)">立即购买</button>
+                            <button type="submit" class="button image-button" id="collect"
+                                onclick="javascript:catAlert('收藏成功了喵~', 5000)">
                                 <span id="collect-icon"></span>
                                 收藏
                             </button>
-                            <button type="submit" class="button image-button" id="share" onclick="javascript:catAlert('分享成功了喵~', 5000)">
+                            <button type="submit" class="button image-button" id="share"
+                                onclick="javascript:catAlert('分享成功了喵~', 5000)">
                                 <span id="share-icon"></span>
                                 分享
                             </button>
@@ -103,7 +108,7 @@
                 </div>
 
                 <!--评价-->
-                <div id="tab-page">
+                <div class="tab-page" id="introduction">
                     <span class="tab-item">
                         <span class="hover-underline selected" id="introduction-tab">商品介绍</span>
                     </span>
@@ -113,7 +118,9 @@
                     <span class="tab-item">
                         <span class="hover-underline" id="specifications-tab">规格与包装</span>
                     </span>
-                    <div class="tab-content" id="comments">
+
+
+                    <div class="tab-content" id="tab-content-comments">
                         <div class="comments-panel">
                             <div class="score-panel">
                                 <div class="score-panel-left-container">
@@ -171,7 +178,7 @@
                                     </div>
                                     <div class="comment-section">
                                         <p>飞舞学校😅。</p>
-                                        
+
                                         <div class="horizontal-separator"></div>
                                         <span class="comment-feedback-question">这篇评测是否有价值？</span>
                                         <div class="comment-button ripple-effect-allowed">
@@ -189,24 +196,25 @@
 
                         <div class="premium-ad-tip">成为 <b>CityU好物优选评鉴官</b> 后可查看更多测评喵~</div>
                     </div>
-                    <div class="tab-content selected" id="introduction">
-                        <div class="narrate" style="text-align: left;">
+                    <div class="tab-content selected" id="tab-content-introduction">
+                        <div class="narrate">
                             <h2>
-                            兩岸四地排名	            	<span>#89</span>
+                                兩岸四地排名<span>#89</span>
                             </h2>
                             <span>
-                            澳門城市大學前身為成立於1981年的東亞大學，2011年2月更名為澳門城市大學（英文名稱：City University of Macau）。大學氹仔校本部座山面海，飽覽南海、珠江及澳門景色，是澳門地區海拔最高的綜合性大學，亦堪稱是求學及從事研究的理想高等學府...
+                                澳門城市大學前身為成立於1981年的東亞大學，2011年2月更名為澳門城市大學（英文名稱：City University of Macau）。
+                                大學氹仔校本部座山面海，飽覽南海、珠江及澳門景色，是澳門地區海拔最高的綜合性大學，亦堪稱是求學及從事研究的理想高等學府......
                             </span>
                         </div>
                     </div>
-                    <div class="tab-content" id="specifications">
-                        <p>规格和包装呢？大概是溜走了喵~</p>
+                    <div class="tab-content" id="tab-content-specifications">
+                        <p>这个商品似乎没有规格和包装喵~</p>
                     </div>
                 </div>
 
-                </div>
             </div>
         </div>
+    </div>
     </div>
 
     <!--底部-->

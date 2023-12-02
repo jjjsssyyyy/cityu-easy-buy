@@ -29,16 +29,16 @@ document.querySelectorAll('.tab-item .hover-underline').forEach(item => {
     });
 
     if (this.id == 'introduction-tab') {
-      document.getElementById('introduction').classList.add('selected');
-      document.getElementById('tab-page').style.backgroundColor = null;
+      document.getElementById('tab-content-introduction').classList.add('selected');
+      document.querySelector('.tab-page').id = "introduction";
     }
     if (this.id == 'comments-tab') {
-      document.getElementById('comments').classList.add('selected');
-      document.getElementById('tab-page').style.backgroundColor = "rgba(255, 240, 200, 0.8)";
+      document.getElementById('tab-content-comments').classList.add('selected');
+      document.querySelector('.tab-page').id = "comments";
     }
     if (this.id == 'specifications-tab') {
-      document.getElementById('specifications').classList.add('selected');
-      document.getElementById('tab-page').style.backgroundColor = null;
+      document.getElementById('tab-content-specifications').classList.add('selected');
+      document.querySelector('.tab-page').id = "specifications";
     }
 
     this.classList.remove('not-selected');
