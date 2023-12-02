@@ -9,8 +9,7 @@ html body {
 }
 
 /* live2d 对话框样式 */
-#live2d-widget-dialog
-{
+#live2d-widget-dialog {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -23,11 +22,12 @@ html body {
     box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 6px, rgba(0, 0, 0, 0.4) 0px 1px 4px;
 }
 
-@keyframes show{
-    from{
+@keyframes show {
+    from {
         opacity: 0;
     }
-    to{
+
+    to {
         opacity: 1;
     }
 }
@@ -40,13 +40,19 @@ html body {
 }
 
 @keyframes live2d-widget-dialog-tingle {
-    0% { transform: translate(-1px, 1.5px) rotate(-2deg); }    
-    100% { transform: translate(1px, -1.5px) rotate(2deg); }
+    0% {
+        transform: translate(-1px, 1.5px) rotate(-2deg);
+    }
+
+    100% {
+        transform: translate(1px, -1.5px) rotate(2deg);
+    }
 }
 
 .shake {
     animation: shake 800ms ease-in-out;
 }
+
 @keyframes shake {
 
     10%,
@@ -182,7 +188,6 @@ body {
 /* 亚克力材质 */
 .acrylic-background {
     border-radius: inherit;
-    -webkit-backdrop-filter: blur(30px) saturate(2) contrast(125%);
     backdrop-filter: blur(30px) saturate(2) contrast(125%);
     background-color: rgba(255, 255, 255, 0.4);
 }
@@ -203,7 +208,6 @@ body {
 }
 
 .aero-background {
-    -webkit-backdrop-filter: blur(5px) saturate(150%);
     backdrop-filter: blur(5px) saturate(150%);
     background-color: rgba(255, 255, 255, 0.2);
 }
@@ -288,20 +292,29 @@ a {
     background-color: rgba(255, 255, 255, 0.8);
 }
 
-/* 通用按钮样式 */
-.action-button {
-    width: 100%;
+.button {
+    position: relative;
     padding: 8px;
     border: 1px solid rgba(0, 0, 0, 0.1);
-    background-color: rgba(12, 153, 255, 0.4);
     color: black;
     border-radius: 4px;
     cursor: pointer;
-    transition: box-shadow 0.333s cubic-bezier(0, 0, 0, 1);
+    text-align: center;
+    overflow: hidden;
+    transition: 0.333s cubic-bezier(0, 0, 0, 1);
 }
 
-.action-button:hover {
+.button:hover {
     box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+/* .button:active {
+    transform: scale(1.01);
+} */
+
+/* 通用按钮样式 */
+.action-button {
+    width: 100%;
+    background-color: rgba(12, 153, 255, 0.4);
 }
 
 .content-container {
@@ -425,7 +438,7 @@ a {
     outline: none;
     padding: 8px;
     padding-right: 0px;
-    width: calc(100% - 40px);
+    width: calc(100% - 32px);
     border: none;
     background-color: transparent;
     display: inline;
@@ -611,4 +624,16 @@ details:hover {
     -ms-transition: none !important;
     -o-transition: none !important;
     transition: none !important;
+}
+
+.ripple {
+    position: absolute;
+    /* 为了保持和button的位置关系 */
+    border-radius: 50%;
+    /* 水波纹圆形 */
+    background: rgba(0, 0, 0, 0.4);
+    /* 水波纹颜色 */
+
+    transform: scale(4);
+    opacity: 1;
 }

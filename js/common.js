@@ -75,7 +75,7 @@ window.onload = function () {
     setTimeout(function() { if (!timer) {catAlert("欢迎来到" + document.title + "喵~", 5000);} }, 200);
     setTimeout(function() { document.body.classList.remove("css-transitions-only-after-page-load"); }, 200);
     // 让猫猫随机说一些话
-    window.setInterval(function() { catAlert(tips[Math.floor(Math.random()*tips.length)], 5000); }, 15000);
+    window.setInterval(function() { catAlert(tips[Math.floor(Math.random()*tips.length)], 5000); }, 12000);
 }
 L2Dwidget.init({
     "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },

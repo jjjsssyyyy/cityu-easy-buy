@@ -132,13 +132,18 @@ body
 }
 
 /*加减盒子边框*/
-.box div {
+.box .button {
     border-radius: 4px;
     border: 0.5px solid rgba(0, 0, 0, 0.4);
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     position: relative;
     width: 27px;
     height: 28px;
+    padding: 0px;
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
+}
+.box .button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
 }
 
 /*减号横线*/
@@ -192,14 +197,44 @@ input[type="number"]::-webkit-outer-spin-button {
     border-radius: 4px;
 }
 
-.btn {
+.button-group {
     display: flex;
     margin-top: 35px;
     border-radius: 4px;
 }
 
+.button-group .button {
+    margin-right: 12px;
+}
+
+.button {
+    width: 145px;
+    height: 45px;
+    font-size: 16px;
+}
+
+
 /*加入购物车*/
-.add {
+#add-to-cart {
+    color: white;
+    border-color: #008264;
+    background-color: rgba(0, 130, 100, 0.8);
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
+}
+#add-to-cart:hover {
+    background-color: #008264;
+}
+/*立即购买*/
+#buy-now {
+    color: #008264;
+    border-color: #008264;
+    background-color: rgba(255, 255, 255, 0.4);
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
+}
+#buy-now:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+/* .add {
     width: 145px;
     height: 44px;
     background-color: #008264;
@@ -213,10 +248,9 @@ input[type="number"]::-webkit-outer-spin-button {
     text-decoration: none;
     color: #FFFFFF;
     font-size: 16px;
-}
+} */
 
-/*立即购买*/
-.buy {
+/* .buy {
     width: 145px;
     height: 44px;
     text-align: center;
@@ -231,10 +265,61 @@ input[type="number"]::-webkit-outer-spin-button {
     text-decoration: none;
     color: #008264;
     font-size: 16px;
+} */
+
+
+.image-button {
+    padding: 0;
+    width: 45px;
+    height: 45px;
+    color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(255, 255, 255, 0.4);
+    font-size: 12px;
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
+}
+.image-button:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.image-button span {
+    width: 16px;
+    height: 16px;
+    display: block;
+    opacity: 1;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+    margin: auto;
+}
+#collect {
+    /* border-width: 2px; */
+    border-color: rgba(245, 185, 50, 0.6);/*250 210 0*/ /*252, 213, 63*/
+    color: rgba(126, 107, 32, 0.8);
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
+}
+#collect:hover {
+    border-color: rgba(245, 185, 50, 1);
+    color: rgba(126, 107, 32, 1);
+}
+#share {
+    /* border-width: 2px; */
+    border-color: rgba(255, 0, 0, 0.6);
+    color: rgba(127, 0, 0, 0.8);
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
+}
+#share:hover {
+    border-color: rgba(255, 0, 0, 1);
+    color: rgba(127, 0, 0, 1);
+}
+#collect-icon {
+    background-image: url(../images/star.svg);
+}
+#share-icon {
+    background-image: url(../images/share.svg);
 }
 
 /*收藏，客服*/
-.fav {
+/* .fav {
     width: 44px;
     height: 44px;
     border: 1px solid rgba(255, 255, 255, 0.2);
@@ -248,7 +333,7 @@ input[type="number"]::-webkit-outer-spin-button {
 
 .fav img {
     padding-top: 2px;
-}
+} */
 
 /* TODO 为botop类添加样式，要求：
     1、弹性布局

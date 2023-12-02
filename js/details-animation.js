@@ -1,12 +1,12 @@
 // https://css-tricks.com/how-to-animate-the-details-element-using-waapi/
-class Accordion {
-  constructor(el) {
+class DetailsAnimator {
+  constructor(details) {
     // Store the <details> element
-    this.el = el;
+    this.details = details;
     // Store the <summary> element
-    this.summary = el.querySelector('summary');
+    this.summary = details.querySelector('summary');
     // Store the <div class="content"> element
-    this.content = el.querySelector('.inner-content');
+    this.content = details.querySelector('.inner-content');
 
     // Store the animation object (so we can cancel it if needed)
     this.animation = null;
@@ -19,15 +19,15 @@ class Accordion {
   }
 
   onClick(e) {
-    // Stop default behaviour from the browser
+    // Stop default behavior from the browser
     e.preventDefault();
     // Add an overflow on the <details> to avoid content overflowing
-    this.el.style.overflow = 'hidden';
+    this.details.style.overflow = 'hidden';
     // Check if the element is being closed or is already closed
-    if (this.isClosing || !this.el.open) {
+    if (this.isClosing || !this.details.open) {
       this.open();
-      // Check if the element is being openned or is already open
-    } else if (this.isExpanding || this.el.open) {
+      // Check if the element is being opened or is already opened
+    } else if (this.isExpanding || this.details.open) {
       this.shrink();
     }
   }
@@ -37,7 +37,7 @@ class Accordion {
     this.isClosing = true;
 
     // Store the current height of the element
-    const startHeight = `${this.el.offsetHeight}px`;
+    const startHeight = `${this.details.offsetHeight}px`;
     // Calculate the height of the summary
     const endHeight = `${this.summary.offsetHeight}px`;
 
@@ -48,7 +48,7 @@ class Accordion {
     }
 
     // Start a WAAPI animation
-    this.animation = this.el.animate({
+    this.animation = this.details.animate({
       // Set the keyframes from the startHeight to endHeight
       height: [startHeight, endHeight]
     }, {
@@ -65,9 +65,9 @@ class Accordion {
 
   open() {
     // Apply a fixed height on the element
-    this.el.style.height = `${this.el.offsetHeight}px`;
+    this.details.style.height = `${this.details.offsetHeight}px`;
     // Force the [open] attribute on the details element
-    this.el.open = true;
+    this.details.open = true;
     // Wait for the next frame to call the expand function
     window.requestAnimationFrame(() => this.expand());
   }
@@ -76,7 +76,7 @@ class Accordion {
     // Set the element as "being expanding"
     this.isExpanding = true;
     // Get the current fixed height of the element
-    const startHeight = `${this.el.offsetHeight}px`;
+    const startHeight = `${this.details.offsetHeight}px`;
     // Calculate the open height of the element (summary height + content height)
     const endHeight = `${this.summary.offsetHeight + this.content.offsetHeight}px`;
 
@@ -87,7 +87,7 @@ class Accordion {
     }
 
     // Start a WAAPI animation
-    this.animation = this.el.animate({
+    this.animation = this.details.animate({
       // Set the keyframes from the startHeight to endHeight
       height: [startHeight, endHeight]
     }, {
@@ -102,17 +102,17 @@ class Accordion {
 
   onAnimationFinish(open) {
     // Set the open attribute based on the parameter
-    this.el.open = open;
+    this.details.open = open;
     // Clear the stored animation
     this.animation = null;
     // Reset isClosing & isExpanding
     this.isClosing = false;
     this.isExpanding = false;
     // Remove the overflow hidden and the fixed height
-    this.el.style.height = this.el.style.overflow = '';
+    this.details.style.height = this.details.style.overflow = '';
   }
 }
 
-document.querySelectorAll('details').forEach((el) => {
-  new Accordion(el);
+document.querySelectorAll('details').forEach((details) => {
+  new DetailsAnimator(details);
 });
