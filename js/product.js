@@ -5,6 +5,9 @@ document.addEventListener('DOMContentLoaded', function () {
 
   box1.addEventListener('click', function () {
     numberInput.value = parseInt(numberInput.value) - 1;
+    if(parseInt(numberInput.value) <= -1) {
+      catAlert("？你是要打算送我喵~", 3000);
+    }
   });
 
   box2.addEventListener('click', function () {
@@ -16,6 +19,7 @@ document.addEventListener('DOMContentLoaded', function () {
 document.querySelectorAll('.scolor div').forEach(div => {
   div.addEventListener('click', function () {
     this.classList.toggle('active');
+    catAlert("眼光还不错喵~", 3000);
   });
 });
 
@@ -35,6 +39,7 @@ document.querySelectorAll('.tab-item .hover-underline').forEach(item => {
     if (this.id == 'comments-tab') {
       document.getElementById('tab-content-comments').classList.add('selected');
       document.querySelector('.tab-page').id = "comments";
+      catAlert("那个叫ALTaleX的家伙看起来不是很友善喵...", 3000);
     }
     if (this.id == 'specifications-tab') {
       document.getElementById('tab-content-specifications').classList.add('selected');
@@ -50,5 +55,12 @@ document.querySelectorAll('.comment-button').forEach(button => {
   button.addEventListener('click', function () {
     var number = this.querySelector('.comment-button-inner-content');
     number.textContent = parseInt(number.textContent) + 1;
+
+    if(this.querySelector('#like')) {
+      catAlert("？", 3000);
+    }
+    if(this.querySelector('#dislike')) {
+      catAlert("正确的，客观的，理智的喵~", 3000);
+    }
   });
 });

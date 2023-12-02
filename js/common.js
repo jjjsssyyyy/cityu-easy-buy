@@ -8,6 +8,8 @@ const tips = [
     "你干嘛啊~嗨嗨哟喵~"
 ];
 var timer;
+var idleTimer;
+var idle = true;
 
 function shakeElement(id) {
     let element = document.getElementById(id)
@@ -30,17 +32,31 @@ function doSearch() {
         }
     }
 }
-function catAlert(text, timeout)
-{
+function catAlert(text, timeout) {
     var content = document.getElementById('live2d-widget-dialog-content');
     content.innerHTML = text;
 
     var dialog = document.getElementById('live2d-widget-dialog');
     dialog.style.opacity = 1;
-    if (timer)
-    {
+    content.animate(
+        {
+            transform: ["scale(0.75)", "scale(1)"],
+            opacity: [0.4, 1]
+        },
+        {
+            duration: 333,
+            easing: "cubic-bezier(0, 0, 0, 1)"
+        });
+    if (timer) {
         clearTimeout(timer);
     }
+    // 取消空闲状态
+    if (idleTimer) {
+        clearTimeout(idleTimer);
+        idleTimer = null; 
+        idle = false;
+    }
+    idleTimer = setTimeout(() => { idle = true;idleTimer = null; }, 5000);
     timer = setTimeout((element) => { element.style.opacity = 0; }, timeout, dialog);
     // dialog.animate({
     //     opacity: [0, 1]
@@ -72,10 +88,10 @@ window.onload = function () {
     dialog.id = "live2d-widget-dialog";
     dialog.appendChild(dialogContent);
     // 页面载入的问候
-    setTimeout(function() { if (!timer) {catAlert("欢迎来到" + document.title + "喵~", 5000);} }, 200);
-    setTimeout(function() { document.body.classList.remove("css-transitions-only-after-page-load"); }, 200);
+    setTimeout(function () { if (!timer) { catAlert("欢迎来到" + document.title + "喵~", 5000); } }, 200);
+    setTimeout(function () { document.body.classList.remove("css-transitions-only-after-page-load"); }, 200);
     // 让猫猫随机说一些话
-    window.setInterval(function() { catAlert(tips[Math.floor(Math.random()*tips.length)], 5000); }, 12000);
+    window.setInterval(function () { if (idle) catAlert(tips[Math.floor(Math.random() * tips.length)], 5000); }, 18000);
 }
 L2Dwidget.init({
     "model": { "jsonPath": "https://unpkg.com/live2d-widget-model-tororo@1.0.5/assets/tororo.model.json", "scale": 1, "hHeadPos": 0.5, "vHeadPos": 0.618 },
@@ -83,7 +99,7 @@ L2Dwidget.init({
     "mobile": { "show": true, "scale": 0.5 },
     "react": { "opacityDefault": 0.7, "opacityOnHover": 0.2 },
     "dialog": {
-    	"enable": true,
-    	"script": {}
-	}
+        "enable": true,
+        "script": {}
+    }
 });
