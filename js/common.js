@@ -22,7 +22,7 @@ function doSearch() {
         shakeElement("search");
     }
     else {
-        if (searchText.toLowerCase() === "CityU".toLowerCase()) {
+        if (searchText.toLowerCase() === "CityU".toLowerCase() || searchText == "城大" || searchText == "澳门城市大学") {
             window.location.href = "product.html";
         }
         else {
