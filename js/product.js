@@ -11,3 +11,9 @@ document.addEventListener('DOMContentLoaded', function () {
       numberInput.value = parseInt(numberInput.value) + 1;
     });
   });
+  //为商品选项添加表单监听事件//
+  document.querySelectorAll('.scolor div').forEach(div => {
+    div.addEventListener('click', function() {
+        this.classList.toggle('active');
+    });
+});
