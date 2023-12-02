@@ -107,7 +107,7 @@ body
 .scolor div {
     border-radius: 4px;
     border: 0.5px solid #008264;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(255, 255, 255, 0.4);
     margin: 5px;
     font-size: 12px;
     font-weight: 500;
@@ -116,6 +116,7 @@ body
     height: 27px;
     text-align: center;
     line-height: 27px;
+    transition: 333ms cubic-bezier(0, 0, 0, 1);
 }
 
 .number,.box {
@@ -336,27 +337,39 @@ input[type="number"]::-webkit-outer-spin-button {
 } */
 
 #tab-page {
+    position: relative;
+    margin-bottom: 24px;
+    height:180px;
     border-radius: 8px;
     padding: 8px;
-    background-color: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+    background-color: rgba(255, 255, 255, 0.8);
+    /* border: 1.5px solid rgba(0, 0, 0, 0.6);
+    box-shadow: rgba(0, 0, 0, 0.4) 0px 1px 4px; */
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 4px 8px 2px;
 }
 
 .tab-item {
     width: 144px;
     margin: 24px;
+    user-select: none;
 }
 
 .tab-item .hover-underline.selected::after {
+    height: 3px;
+    border-radius: 1.5px;
     background-color: rgba(0, 130, 100, 1);
 }
 .tab-item .hover-underline::after {
+    height: 3px;
+    border-radius: 1.5px;
     background-color: rgba(0, 130, 100, 0.4);
 }
+
 .tab-item .hover-underline {
     transition: 333ms cubic-bezier(0, 0, 0, 1);
-    font-weight: lighter;
-    opacity: 0.8;
+    font-weight: normal;
+    opacity: 0.6;
     cursor: pointer;
 }
 .tab-item .hover-underline:hover {
@@ -367,15 +380,50 @@ input[type="number"]::-webkit-outer-spin-button {
     opacity: 1;
 }
 
+
+@keyframes slideIn {
+    from {
+        translate: -16px;
+        opacity: 0;
+    }
+
+    to {
+        translate: 0px;
+        opacity: 1;
+    }
+}
+@keyframes slideOut {
+    from {
+        translate: 0px;
+        opacity: 1;
+    }
+
+    to {
+        translate: 8px;
+        opacity: 0;
+    }
+}
 .tab-content {
-    width: 100%;
-    height:180px;
-    opacity: 0.4;
+    position: absolute;
+    width: calc(100% - 20px);
+    height: calc(100% - 36px);
     text-align:center;
     display: flex;
+    opacity: 0;
+}
+.tab-content.not-selected {
+    opacity: 1;
+    animation: 0.250s both slideOut cubic-bezier(0, 0, 0, 1);
+}
+.tab-content.selected {
+    opacity: 1;
+    animation: 0.333s both slideIn cubic-bezier(0, 0, 0, 1);
+    animation-delay: 87ms;
 }
 .tab-content p {
     margin: auto;
+    user-select: none;
+    opacity: 0.4;
 }
 
 
@@ -384,7 +432,7 @@ input[type="number"]::-webkit-outer-spin-button {
     2、宽度和高度分别为840px和33px，背景颜色为#F7F7F7
     3、字体大小为13px，行高为33px，颜色为#838383，文本居中对齐
     4、上，右，下，左四个外边距分别为96px auto 0 auto */
-.botop
+/* .botop
 {
     display:flex;
     width:840px;
@@ -396,26 +444,26 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align:center;
     margin:16px auto auto auto;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
-}
+} */
 
-.intr {
+/* .intr {
     width: 100px;
-}
+} */
 /*TODO  为middle类添加样式，要求：
     1、宽度为100px，背景颜色为#2F5DF2
     2、字体颜色为#FFFFFF，左右外边距分别为38px 90px */
-.middle{
+/* .middle{
     width:100px;
     background-color:#008264;
     color:#FFFFFF;
     margin-left:38px;
     margin-right:90px;
-}
+} */
 
 /* TODO 为bobottom类添加样式，要求：
     1、设置宽度和高度分别为840px和160px，背景颜色为#F7F7F7
     2、设置字体大小为13px，行高为160px，颜色为#838383，文本居中对齐，外边距为auto */
-.bobottom{
+/* .bobottom{
     width:840px;
     height:160px;
     background-color:rgba(255, 255, 255, 0.6);
@@ -425,15 +473,18 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align:center;
     margin:auto;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
-}
+} */
 .scolor span {
     cursor: pointer;
     color: black;
-  }
-  .selected {
+}
+/* .selected {
     color: red;
-  }
+} */
 /*添加JavaScript监听事件点击后的样式*/
 .scolor div.active {
-    background-color: rgba(110, 106, 106, 0.3);
+    background-color: #008264;
+}
+.scolor div.active span {
+    color: white;
 }

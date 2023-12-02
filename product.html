@@ -71,9 +71,9 @@
                             </div>
                             <div class="scolor">
                                 <p>选择类别</p>
-                                <div><span>数据科学学院</span></div>
-                                <div><span>商学院</span></div>
-                                <div><span>金融学院</span></div>
+                                <div class="ripple-effect-allowed"><span>数据科学学院</span></div>
+                                <div class="ripple-effect-allowed"><span>商学院</span></div>
+                                <div class="ripple-effect-allowed"><span>金融学院</span></div>
                             </div>
                             <div class="number">
                                 <p>数量</p>
@@ -116,18 +116,24 @@
                 </div>
 
                 <!--评价-->
-                <div class="acrylic-background" id="tab-page">
+                <div id="tab-page">
                     <span class="tab-item">
-                        <span class="hover-underline" id="introduction">商品介绍</span>
+                        <span class="hover-underline selected" id="introduction-tab">商品介绍</span>
                     </span>
                     <span class="tab-item">
-                        <span class="hover-underline selected" id="comments">商品评价</span>
+                        <span class="hover-underline" id="comments-tab">商品评价</span>
                     </span>
                     <span class="tab-item">
-                        <span class="hover-underline" id="specifications">规格与包装</span>
+                        <span class="hover-underline" id="specifications-tab">规格与包装</span>
                     </span>
-                    <div class="tab-content">
-                        <p>居然还没有评论~</p>
+                    <div class="tab-content" id="comments">
+                        <p>暂时还没有评论喵~</p>
+                    </div>
+                    <div class="tab-content selected" id="introduction">
+                        <p>不知道为什么，简介被吃掉了喵~</p>
+                    </div>
+                    <div class="tab-content" id="specifications">
+                        <p>规格和包装呢？大概是溜走了喵~</p>
                     </div>
 
                     <!-- <div class="botop">

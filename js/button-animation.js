@@ -33,3 +33,6 @@ class ButtonAnimator {
 document.querySelectorAll('.button').forEach((button) => {
     new ButtonAnimator(button);
 });
+document.querySelectorAll('.ripple-effect-allowed').forEach((button) => {
+    new ButtonAnimator(button);
+});
