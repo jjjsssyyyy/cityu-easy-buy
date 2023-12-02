@@ -101,7 +101,7 @@ body
 }
 
 /* 为scolor类中的div标签添加样式，要求：
-1、设置边框宽度为0.5px，实线，颜色为#2F5DF2
+1、设置边框宽度为0.5px，实线，颜色为#008264
 2、外边距为5px，字体大小为12px，粗细为500，颜色为#727272
 3、宽度80px，高度27px，文本居中对齐，行高为27px */
 .scolor div {
@@ -425,4 +425,15 @@ input[type="number"]::-webkit-outer-spin-button {
     text-align:center;
     margin:auto;
     box-shadow: 0 0 24px rgba(0, 0, 0, 0.2);
+}
+.scolor span {
+    cursor: pointer;
+    color: black;
+  }
+  .selected {
+    color: red;
+  }
+/*添加JavaScript监听事件点击后的样式*/
+.scolor div.active {
+    background-color: rgba(110, 106, 106, 0.3);
 }
