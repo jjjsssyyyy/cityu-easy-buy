@@ -472,7 +472,7 @@ input[type="number"]::-webkit-outer-spin-button {
     background-color: rgb(255, 165, 0);
 }
 #five-star-score-progress-bar::after {
-    width: 15%;
+    width: 45%;
 }
 #four-star-score-progress-bar::after {
     width: 5%;
@@ -484,7 +484,7 @@ input[type="number"]::-webkit-outer-spin-button {
     width: 5%;
 }
 #one-star-score-progress-bar::after {
-    width: 70%;
+    width: 40%;
 }
 
 .tab-content-inner-separator {
