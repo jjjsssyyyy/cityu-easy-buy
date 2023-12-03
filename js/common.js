@@ -24,8 +24,11 @@ function doSearch() {
         shakeElement("search");
     }
     else {
-        if (searchText.toLowerCase() === "CityU".toLowerCase() || searchText == "城大" || searchText == "澳门城市大学") {
-            window.location.href = "product.html";
+        if (searchText.toLowerCase() === "CityU".toLowerCase() || searchText == "城市大学" || searchText == "城大" || searchText == "澳城大" || searchText == "澳门城市大学") {
+            window.location.href = "cityu.html";
+        }
+        else if (searchText.toLowerCase() === "MUST".toLowerCase() || searchText == "科技大学" || searchText == "科大" || searchText == "澳科大" || searchText == "澳门科技大学") {
+            window.location.href = "must.html";
         }
         else {
             catAlert('没找到对应的好物喵~', 5000);

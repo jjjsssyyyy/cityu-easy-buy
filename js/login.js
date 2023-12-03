@@ -7,7 +7,7 @@ document.getElementById('loginForm').addEventListener('submit', function (event)
     }
     else
     {
-        window.location.href = "product.html";
+        window.location.href = "cityu.html";
     }
     event.preventDefault(); // 阻止表单提交
 });

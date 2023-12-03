@@ -1,0 +1,27 @@
+body
+{
+    background-image:url(../images/cityu-blur.jpg)
+}
+
+.tab-item .hover-underline.selected::after {
+    background-color: rgba(0, 130, 100, 1);
+}
+.tab-item .hover-underline::after {
+    background-color: rgba(0, 130, 100, 0.4);
+}
+
+#five-star-score-progress-bar::after {
+    width: 10%;
+}
+#four-star-score-progress-bar::after {
+    width: 5%;
+}
+#three-star-score-progress-bar::after {
+    width: 5%;
+}
+#two-star-score-progress-bar::after {
+    width: 5%;
+}
+#one-star-score-progress-bar::after {
+    width: 75%;
+}

@@ -39,7 +39,7 @@ document.querySelectorAll('.tab-item .hover-underline').forEach(item => {
     if (this.id == 'comments-tab') {
       document.getElementById('tab-content-comments').classList.add('selected');
       document.querySelector('.tab-page').id = "comments";
-      catAlert("那个叫ALTaleX的家伙看起来不是很友善喵...", 3000);
+      catAlert("评论看起来都不是很友善喵...", 3000);
     }
     if (this.id == 'specifications-tab') {
       document.getElementById('tab-content-specifications').classList.add('selected');

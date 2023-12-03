@@ -1,0 +1,60 @@
+body
+{
+    background-image:url(../images/must-blur.jpg)
+}
+
+.scolor div {
+    border: 0.5px solid rgb(0, 100, 160);
+}
+.scolor div.active {
+    background-color: rgb(0, 100, 160);
+}
+
+/*加入购物车*/
+#add-to-cart {
+    border-color: rgb(0, 100, 160);
+    background-color: rgba(0, 100, 200, 0.8);
+}
+#add-to-cart:hover {
+    background-color: rgb(0, 100, 160);
+}
+/*立即购买*/
+#buy-now {
+    color: rgb(0, 100, 160);
+    border-color: rgb(0, 100, 160);
+}
+#buy-now:hover {
+    background-color: rgba(255, 255, 255, 0.6);
+}
+
+.tab-item .hover-underline.selected::after {
+    background-color: rgba(0, 100, 160, 1);
+}
+.tab-item .hover-underline::after {
+    background-color: rgba(0, 100, 160, 0.4);
+}
+
+.tab-page#comments {
+    background-color: rgba(205, 200, 165, 0.6);
+}
+
+.user-comment-score {
+    width: calc(100% - 72px);
+    color: rgb(83, 166, 67);
+}
+
+#five-star-score-progress-bar::after {
+    width: 45%;
+}
+#four-star-score-progress-bar::after {
+    width: 5%;
+}
+#three-star-score-progress-bar::after {
+    width: 5%;
+}
+#two-star-score-progress-bar::after {
+    width: 5%;
+}
+#one-star-score-progress-bar::after {
+    width: 40%;
+}
